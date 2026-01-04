@@ -2,7 +2,8 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-import { ChevronLeft, ChevronRight, ExternalLink } from "lucide-react";
+// PERUBAHAN 1: Menambahkan import icon Github
+import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
 import { projects } from "@/data/projects";
 
 export default function Hero() {
@@ -196,14 +197,31 @@ export default function Hero() {
                         ))}
                       </div>
 
-                      <a
-                        href={project.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-auto w-full py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold shadow-[0_10px_20px_-10px_rgba(236,72,153,0.5)] hover:shadow-[0_15px_30px_-10px_rgba(236,72,153,0.6)] hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
-                      >
-                        View Project <ExternalLink size={14} strokeWidth={3} />
-                      </a>
+                      {/* --- PERUBAHAN DI SINI (BUTTON SPLIT) --- */}
+                      <div className="mt-auto flex gap-3 w-full">
+                         {/* Button Secondary: GitHub (Mirip Contact Me style) */}
+                         <a
+                          href={project.github || "#"} 
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 group/github"
+                        >
+                          <Github size={18} className="group-hover/github:scale-110 transition-transform"/> 
+                          <span className="text-sm">Source</span>
+                        </a>
+
+                        {/* Button Primary: View Project (Style asli Pink) */}
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-[1.5] py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold shadow-[0_10px_20px_-10px_rgba(236,72,153,0.5)] hover:shadow-[0_15px_30px_-10px_rgba(236,72,153,0.6)] hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                        >
+                          View Project <ExternalLink size={14} strokeWidth={3} />
+                        </a>
+                      </div>
+                      {/* --- AKHIR PERUBAHAN --- */}
+                      
                     </div>
                   </motion.div>
                 </AnimatePresence>
@@ -230,7 +248,7 @@ export default function Hero() {
                 ))}
               </div>
 
-              {/* TEKS PROJECT ID (BARU DITAMBAHKAN) */}
+              {/* TEKS PROJECT ID */}
               <p className="text-[10px] font-black tracking-[0.3em] text-slate-400 dark:text-slate-500 uppercase">
                 Project {currentIndex + 1} | {projects.length}
               </p>

@@ -31,7 +31,7 @@ export const projects: Project[] = [
     title: "Kalimantan Barat",
     description: "About West Borneo",
     img: "/images/indahnya.jpg",
-    tech: ["BOOTSTRAP", "HTML"],
+    tech: ["SWIPER", "HTML"],
     link: "https://indahnyakalimantanbarat.vercel.app/"
   },
   {
