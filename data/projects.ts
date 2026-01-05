@@ -26,8 +26,8 @@ export const projects: Project[] = [
     description: "3D game",
     img: "/images/galleylahall.jpg",
     tech: ["UNITY 3D", "C#"],
-    link: "",
-    github: "https://indahnyakalimantanbarat.vercel.app/" // Kosong, nanti tombol akan jadi mode "Private"
+    link: "https://vinnyvv.itch.io/galley-la-halls",
+    github: "" // Kosong, nanti tombol akan jadi mode "Private"
   },
   {
     id: 3,
