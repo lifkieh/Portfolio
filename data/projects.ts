@@ -36,7 +36,7 @@ export const projects: Project[] = [
     img: "/images/indahnya.jpg",
     tech: ["SWIPER", "HTML"],
     link: "https://indahnyakalimantanbarat.vercel.app/",
-    github: "" // Kosong
+    github: "https://github.com/lifkiss/KalimantanBarat" // Kosong
   },
   {
     id: 4,
