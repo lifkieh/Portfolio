@@ -2,13 +2,32 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
-// PERUBAHAN 1: Menambahkan import icon Github
-import { ChevronLeft, ChevronRight, ExternalLink, Github } from "lucide-react";
+import { 
+  ChevronLeft, 
+  ChevronRight, 
+  ExternalLink, 
+  Github, // Kita ganti icon Link2 jadi Github agar lebih sesuai
+  Lock, 
+  AlertCircle 
+} from "lucide-react";
 import { projects } from "@/data/projects";
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [direction, setDirection] = useState<number>(0);
+  
+  // State Toast Notification
+  const [toast, setToast] = useState<{ show: boolean; message: string }>({
+    show: false,
+    message: "",
+  });
+
+  const showToast = (message: string) => {
+    setToast({ show: true, message });
+    setTimeout(() => {
+      setToast((prev) => ({ ...prev, show: false }));
+    }, 3000);
+  };
 
   const nextSlide = useCallback(() => {
     setDirection(1);
@@ -68,6 +87,15 @@ export default function Hero() {
 
   const project = projects[currentIndex];
 
+  // --- LOGIC CHECK LINK (Disesuaikan dengan projects.ts) ---
+
+  // 1. Cek Link GitHub (Menggunakan properti 'github' dari data)
+  const hasGithubLink = project.github && project.github.trim() !== "" && project.github !== "#";
+  
+  // 2. Cek Link Demo/Project (Menggunakan properti 'link' dari data)
+  const hasProjectLink = project.link && project.link.trim() !== "" && project.link !== "#";
+
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-transparent transition-colors duration-500">
       
@@ -77,7 +105,7 @@ export default function Hero() {
         <div className="absolute right-[-10%] bottom-0 w-[60vw] max-w-[900px] aspect-square rounded-full opacity-25 blur-[160px] bg-gradient-to-br from-sky-200 to-transparent animate-pulse-slower"></div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full">
+      <div className="max-w-7xl mx-auto px-6 lg:px-12 py-20 w-full relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 items-center">
           
           {/* KIRI */}
@@ -136,7 +164,6 @@ export default function Hero() {
           <div className="md:col-span-5 flex flex-col items-center gap-8">
             <div className="relative group w-full max-w-[450px] perspective-[1000px]">
 
-              {/* NAVIGASI KIRI */}
               <button
                 onClick={prevSlide}
                 className="absolute left-[-25px] top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border shadow-xl transition hover:bg-white dark:hover:bg-slate-800 hover:scale-110 active:scale-95"
@@ -144,7 +171,6 @@ export default function Hero() {
                 <ChevronLeft className="text-slate-900 dark:text-white" />
               </button>
 
-              {/* NAVIGASI KANAN */}
               <button
                 onClick={nextSlide}
                 className="absolute right-[-25px] top-1/2 -translate-y-1/2 z-50 p-3 rounded-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border shadow-xl transition hover:bg-white dark:hover:bg-slate-800 hover:scale-110 active:scale-95"
@@ -152,7 +178,6 @@ export default function Hero() {
                 <ChevronRight className="text-slate-900 dark:text-white" />
               </button>
 
-              {/* CARD CONTAINER */}
               <div className="relative h-[520px] w-full">
                 <AnimatePresence mode="popLayout" custom={direction}>
                   <motion.div
@@ -164,7 +189,6 @@ export default function Hero() {
                     exit="exit"
                     className="absolute inset-0 p-6 rounded-[2.5rem] bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl border-2 border-white/30 dark:border-white/10 shadow-2xl flex flex-col origin-center will-change-transform"
                   >
-                    {/* GAMBAR */}
                     <div className="relative h-64 rounded-[1.8rem] overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-sm">
                       <div className="absolute top-4 right-4 z-10 px-4 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 text-[10px] font-black text-pink-500 uppercase tracking-widest backdrop-blur-md">
                         PROJECT
@@ -176,7 +200,6 @@ export default function Hero() {
                       />
                     </div>
 
-                    {/* KONTEN TEKS */}
                     <div className="mt-8 px-2 flex flex-col flex-grow">
                       <h3 className="text-2xl font-bold text-slate-900 dark:text-white leading-tight">
                         {project.title}
@@ -197,40 +220,65 @@ export default function Hero() {
                         ))}
                       </div>
 
-                      {/* --- PERUBAHAN DI SINI (BUTTON SPLIT) --- */}
                       <div className="mt-auto flex gap-3 w-full">
-                         {/* Button Secondary: GitHub (Mirip Contact Me style) */}
+                         {/* === BUTTON GITHUB (Source) === */}
                          <a
-                          href={project.github || "#"} 
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 py-4 rounded-2xl border-2 border-slate-200 dark:border-slate-700 font-bold text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors flex items-center justify-center gap-2 group/github"
+                          href={hasGithubLink ? project.github : "#"} 
+                          target={hasGithubLink ? "_blank" : undefined}
+                          rel={hasGithubLink ? "noopener noreferrer" : undefined}
+                          onClick={(e) => {
+                            if (!hasGithubLink) {
+                              e.preventDefault();
+                              showToast("Repository GitHub bersifat Private / Belum tersedia.");
+                            }
+                          }}
+                          className={`flex-1 py-4 rounded-2xl border-2 font-bold transition-all flex items-center justify-center gap-2 group/secondary
+                            ${hasGithubLink 
+                              ? "border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 cursor-pointer" 
+                              : "border-slate-200/50 dark:border-slate-700/50 text-slate-400 dark:text-slate-600 opacity-70 cursor-not-allowed" 
+                            }
+                          `}
                         >
-                          <Github size={18} className="group-hover/github:scale-110 transition-transform"/> 
+                          {hasGithubLink ? (
+                            <Github size={18} className="group-hover/secondary:scale-110 transition-transform"/> 
+                          ) : (
+                            <Lock size={16} />
+                          )}
                           <span className="text-sm">Source</span>
                         </a>
 
-                        {/* Button Primary: View Project (Style asli Pink) */}
+                        {/* === BUTTON VIEW PROJECT (Link Demo) === */}
                         <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-[1.5] py-4 rounded-2xl bg-gradient-to-r from-pink-500 to-rose-500 text-white font-bold shadow-[0_10px_20px_-10px_rgba(236,72,153,0.5)] hover:shadow-[0_15px_30px_-10px_rgba(236,72,153,0.6)] hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-2"
+                          href={hasProjectLink ? project.link : "#"}
+                          target={hasProjectLink ? "_blank" : undefined}
+                          rel={hasProjectLink ? "noopener noreferrer" : undefined}
+                          onClick={(e) => {
+                            if (!hasProjectLink) {
+                              e.preventDefault();
+                              showToast("Link Demo Project belum tersedia.");
+                            }
+                          }}
+                          className={`flex-[1.5] py-4 rounded-2xl font-bold transition-all flex items-center justify-center gap-2
+                            ${hasProjectLink
+                              ? "bg-gradient-to-r from-pink-500 to-rose-500 text-white shadow-[0_10px_20px_-10px_rgba(236,72,153,0.5)] hover:shadow-[0_15px_30px_-10px_rgba(236,72,153,0.6)] hover:brightness-110 active:scale-[0.98] cursor-pointer"
+                              : "bg-pink-500/50 text-white/80 cursor-not-allowed shadow-none" 
+                            }
+                          `}
                         >
-                          View Project <ExternalLink size={14} strokeWidth={3} />
+                          {hasProjectLink ? (
+                             <>View Project <ExternalLink size={14} strokeWidth={3} /></>
+                          ) : (
+                             <>View Project <Lock size={14} strokeWidth={3} /></>
+                          )}
                         </a>
                       </div>
-                      {/* --- AKHIR PERUBAHAN --- */}
-                      
                     </div>
                   </motion.div>
                 </AnimatePresence>
               </div>
             </div>
 
-            {/* PAGINATION DOTS & COUNTER */}
             <div className="flex flex-col items-center gap-3 mt-6">
-              {/* Dots */}
               <div className="flex gap-2 p-2 rounded-full bg-white/20 dark:bg-slate-900/20 backdrop-blur-lg">
                 {projects.map((_, i) => (
                   <button
@@ -247,16 +295,45 @@ export default function Hero() {
                   />
                 ))}
               </div>
-
-              {/* TEKS PROJECT ID */}
               <p className="text-[10px] font-black tracking-[0.3em] text-slate-400 dark:text-slate-500 uppercase">
                 Project {currentIndex + 1} | {projects.length}
               </p>
             </div>
-
           </div>
         </div>
       </div>
+
+      {/* --- TOAST NOTIFICATION (BUBBLE CHAT STYLE) --- */}
+      <AnimatePresence>
+        {toast.show && (
+          <motion.div
+            initial={{ opacity: 0, y: 10, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 10, scale: 0.95 }}
+            className={`
+              fixed bottom-10 left-1/2 -translate-x-1/2 z-[100] 
+              flex items-center gap-3 px-6 py-4 
+              rounded-2xl shadow-2xl 
+              bg-slate-900 dark:bg-white 
+              text-white dark:text-slate-900 
+              border border-white/10
+              
+              /* CSS UNTUK EKOR BUBBLE CHAT */
+              after:content-[''] 
+              after:absolute 
+              after:top-full 
+              after:left-1/2 
+              after:-translate-x-1/2 
+              after:border-[8px] 
+              after:border-transparent 
+              after:border-t-slate-900 dark:after:border-t-white
+            `}
+          >
+            <AlertCircle size={24} className="text-pink-500" />
+            <span className="font-bold text-base">{toast.message}</span>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       <style jsx>{`
         @keyframes pulse-slow {

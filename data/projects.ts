@@ -7,6 +7,7 @@ export type Project = {
   img: string
   tech: string[]
   link: string
+  github?: string // Menambahkan properti github (opsional)
 }
 
 export const projects: Project[] = [
@@ -16,7 +17,8 @@ export const projects: Project[] = [
     description: "Catalog website of PT Dua Naga Perkasa",
     img: "/images/nagaper.jpg",
     tech: ["SQL", "PHP"],
-    link: "https://github.com/lifkiss/PT-DuaNagaPerkasa.git"
+    link: "", 
+    github: "https://github.com/lifkiss/PT-DuaNagaPerkasa.git"
   },
   { 
     id: 2,
@@ -24,7 +26,8 @@ export const projects: Project[] = [
     description: "3D game",
     img: "/images/galleylahall.jpg",
     tech: ["UNITY 3D", "C#"],
-    link: "https://vinnyvv.itch.io/galley-la-halls"
+    link: "",
+    github: "https://indahnyakalimantanbarat.vercel.app/" // Kosong, nanti tombol akan jadi mode "Private"
   },
   {
     id: 3,
@@ -32,7 +35,8 @@ export const projects: Project[] = [
     description: "About West Borneo",
     img: "/images/indahnya.jpg",
     tech: ["SWIPER", "HTML"],
-    link: "https://indahnyakalimantanbarat.vercel.app/"
+    link: "https://indahnyakalimantanbarat.vercel.app/",
+    github: "" // Kosong
   },
   {
     id: 4,
@@ -40,6 +44,7 @@ export const projects: Project[] = [
     description: "Visual Novel Game",
     img: "/images/CrimsonD.png",
     tech: ["PYTHON", "RENPY"],
-    link: "https://vnjcafeumn.itch.io/crimson-down-the-creek"
+    link: "https://vnjcafeumn.itch.io/crimson-down-the-creek",
+    github: "" // Kosong
   }
 ]
