@@ -1,5 +1,3 @@
-// src/data/projects.ts
-
 export type Project = {
   id: number
   title: string
@@ -34,9 +32,9 @@ export const projects: Project[] = [
     title: "Kalimantan Barat",
     description: "About West Borneo",
     img: "/images/indahnya.jpg",
-    tech: ["SWIPER", "HTML"],
+    tech: ["HTML"],
     link: "https://indahnyakalimantanbarat.vercel.app/",
-    github: "https://github.com/lifkiss/KalimantanBarat" // Kosong
+    github: "https://github.com/lifkiss/KalimantanBarat" 
   },
   {
     id: 4,

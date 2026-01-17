@@ -6,7 +6,7 @@ import {
   ChevronLeft, 
   ChevronRight, 
   ExternalLink, 
-  Github, // Kita ganti icon Link2 jadi Github agar lebih sesuai
+  Github,
   Lock, 
   AlertCircle 
 } from "lucide-react";
@@ -86,8 +86,6 @@ export default function Hero() {
   };
 
   const project = projects[currentIndex];
-
-  // --- LOGIC CHECK LINK (Disesuaikan dengan projects.ts) ---
 
   // 1. Cek Link GitHub (Menggunakan properti 'github' dari data)
   const hasGithubLink = project.github && project.github.trim() !== "" && project.github !== "#";
@@ -247,7 +245,7 @@ export default function Hero() {
                           <span className="text-sm">Source</span>
                         </a>
 
-                        {/* === BUTTON VIEW PROJECT (Link Demo) === */}
+                        {/*BUTTON VIEW PROJECT */}
                         <a
                           href={hasProjectLink ? project.link : "#"}
                           target={hasProjectLink ? "_blank" : undefined}
