@@ -55,13 +55,14 @@ export default function About() {
             </div>
           </div>
 
-          {/* 2. ABOUT ME - Font tetap besar (1.5x) */}
+          {/* 2. ABOUT ME  */}
           <div>
             <h2 className="text-3xl font-bold mb-2">About me</h2>
             <p className="text-slate-600 text-lg leading-relaxed">
-             Informatics student at Universitas Multimedia Nusantara with a strong interest in full stack, backend, and Android development. 
-            Experienced in building web and mobile applications and collaborating on real world projects. 
-             Passionate about turning ideas into functional and scalable software.
+             Computer Science student with hands on experience in full stack web development and real world system
+            deployment. Experienced in building backend driven applications, managing databases, and working on production
+            oriented projects. Interested in cloud based systems and exploring applications of AI and machine learning in real world
+            products
             </p>
           </div>
 
