@@ -23,7 +23,7 @@ export default function About() {
               className="w-28 h-28 rounded-full object-cover border border-white/20"
             />
             <div className="flex flex-col items-start gap-2">
-              <div className="text-sm text-slate-600">Based in Indonesia</div>
+              <div className="text-sm text-slate-600"></div>
               
               {/* TOMBOL DOWNLOAD RESUME */}
               <a

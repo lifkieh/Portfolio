@@ -141,7 +141,7 @@ export default function Hero() {
 
             <div className="mt-10 flex gap-4">
               <a
-                href="https://github.com/lifkiss"
+                href="https://github.com/lifkieh"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-4 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold shadow-xl hover:scale-105 active:scale-95 transition"

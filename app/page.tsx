@@ -1,5 +1,5 @@
 'use client'
-import Navbar from '../components/Navbar'
+import FloatingDock from '../components/FloatingDock'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Projects from '../components/Projects'
@@ -9,8 +9,7 @@ import Footer from '../components/Footer'
 export default function Page() {
   return (
     <div className="min-h-screen bg-transparent text-slate-900 dark:text-slate-100">
-
-      <Navbar />
+      <FloatingDock />
       <main>
         <Hero />
         <About />

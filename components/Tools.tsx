@@ -4,7 +4,7 @@ import { motion, Variants } from 'framer-motion'
 
 const toolsList = [
   'Git', 'GitHub', 'Vercel', 'Firebase', 'MySQL', 
-  'Postman', 'VS Code', 'Android Studio', 'UNITY',
+  , 'VS Code', 'Android Studio', 'UNITY',
 ]
 
 const container: Variants = {

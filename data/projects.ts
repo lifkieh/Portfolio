@@ -16,7 +16,7 @@ export const projects: Project[] = [
     img: "/images/nagaper.jpg",
     tech: ["SQL", "PHP"],
     link: "", 
-    github: "https://github.com/lifkiss/PT-DuaNagaPerkasa.git"
+    github: "https://github.com/lifkieh/PT-DuaNagaPerkasa.git"
   },
   { 
     id: 2,
@@ -34,7 +34,7 @@ export const projects: Project[] = [
     img: "/images/indahnya.jpg",
     tech: ["HTML"],
     link: "https://indahnyakalimantanbarat.vercel.app/",
-    github: "https://github.com/lifkiss/KalimantanBarat" 
+    github: "https://github.com/lifkieh/KalimantanBarat" 
   },
   {
     id: 4,
