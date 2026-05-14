@@ -1,48 +1,83 @@
+import fs from 'fs';
+import path from 'path';
+
 export type Project = {
   id: number
   title: string
   description: string
+  longDescription?: string
   img: string
   tech: string[]
   link: string
-  github?: string // Menambahkan properti github (opsional)
+  github?: string
+  documentUrl?: string
 }
 
-export const projects: Project[] = [
-  {
-    id: 1,
-    title: "Catalog Dua Naga Perkasa",
-    description: "Catalog website of PT Dua Naga Perkasa",
-    img: "/images/nagaper.jpg",
-    tech: ["SQL", "PHP"],
-    link: "", 
-    github: "https://github.com/lifkieh/PT-DuaNagaPerkasa.git"
-  },
-  { 
-    id: 2,
-    title: "Galley La Hall",
-    description: "3D game",
-    img: "/images/galleylahall.jpg",
-    tech: ["UNITY 3D", "C#"],
-    link: "https://vinnyvv.itch.io/galley-la-halls",
-    github: "" // Kosong, nanti tombol akan jadi mode "Private"
-  },
-  {
-    id: 3,
-    title: "Kalimantan Barat",
-    description: "About West Borneo",
-    img: "/images/indahnya.jpg",
-    tech: ["HTML"],
-    link: "https://indahnyakalimantanbarat.vercel.app/",
-    github: "https://github.com/lifkieh/KalimantanBarat" 
-  },
-  {
-    id: 4,
-    title: "Crimson Down The Creek",
-    description: "Visual Novel Game",
-    img: "/images/CrimsonD.png",
-    tech: ["PYTHON", "RENPY"],
-    link: "https://vnjcafeumn.itch.io/crimson-down-the-creek",
-    github: "" // Kosong
+const filePath = path.join(process.cwd(), 'data', 'projects.json');
+
+export function getProjects(): Project[] {
+  try {
+    const raw = fs.readFileSync(filePath, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return [];
   }
-]
+}
+
+export type AboutData = {
+  name: string
+  avatar: string
+  resumeUrl: string
+  subtitle: string
+  bio: string
+  githubUrl: string
+  linkedinUrl: string
+}
+
+const aboutPath = path.join(process.cwd(), 'data', 'about.json');
+
+export function getAbout(): AboutData {
+  try {
+    const raw = fs.readFileSync(aboutPath, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return { name: '', avatar: '', resumeUrl: '', subtitle: '', bio: '', githubUrl: '', linkedinUrl: '' };
+  }
+}
+
+export type SkillsToolsData = {
+  skills: string[]
+  tools: string[]
+}
+
+const skillsPath = path.join(process.cwd(), 'data', 'skills.json');
+
+export function getSkillsTools(): SkillsToolsData {
+  try {
+    const raw = fs.readFileSync(skillsPath, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return { skills: [], tools: [] };
+  }
+}
+
+export type Certificate = {
+  id: number
+  title: string
+  platform: string
+  description: string
+  img: string
+  date: string
+  credentialUrl?: string
+}
+
+const certificatesPath = path.join(process.cwd(), 'data', 'certificates.json');
+
+export function getCertificates(): Certificate[] {
+  try {
+    const raw = fs.readFileSync(certificatesPath, 'utf-8');
+    return JSON.parse(raw);
+  } catch {
+    return [];
+  }
+}

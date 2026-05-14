@@ -1,8 +1,8 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import React from "react";
+import { Providers } from "./providers";
 import FloatingDock from "@/components/FloatingDock";
-import { Providers } from "./providers"; // Import file yang baru dibuat
 
 export const metadata: Metadata = {
   title: "I'M — Lifkie",

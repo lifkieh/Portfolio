@@ -1,7 +1,8 @@
 import ProjectCard from '../../components/ProjectCard'
-import { projects } from '../../data/projects' 
+import { getProjects } from '../../data/projects' 
 
 export default function ProjectsPage() {
+  const projects = getProjects()
   return (
     <div className="min-h-screen bg-[#120b18] text-[#f1eaf5]">
       <div className="max-w-6xl mx-auto px-6 py-12">
@@ -15,4 +16,4 @@ export default function ProjectsPage() {
       </div>
     </div>
   )
-}
+}

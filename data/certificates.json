@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "HCIA-AI V3.5 COURSE",
+    "platform": "Huawei Technologies Co.",
+    "description": "Gained a comprehensive understanding of AI fundamentals.",
+    "img": "/uploads/1778756954046-photo-(2).png",
+    "date": "May 2025",
+    "credentialUrl": ""
+  },
+  {
+    "id": 2,
+    "title": "HCIA-OpenGauss V1.0",
+    "platform": "Huawei Technologies Co.",
+    "description": "Mastered enterprise-level database management focusing on openGauss architecture.",
+    "img": "/uploads/1778757147649-photo.png",
+    "date": "July 2025",
+    "credentialUrl": ""
+  },
+  {
+    "id": 3,
+    "title": "Introduction To Python",
+    "platform": "sololearn",
+    "description": "",
+    "img": "/uploads/1778758171333-WhatsApp-Image-2026-05-14-at-6.26.06-PM.jpeg",
+    "date": "May 2025",
+    "credentialUrl": ""
+  },
+  {
+    "id": 4,
+    "title": "AI & GAME Competition ",
+    "platform": "Mae Fah Luang University",
+    "description": "participant in the Joint International Workshop and Competition 2025 on AI & Game.",
+    "img": "/uploads/1778758161774-WhatsApp-Image-2026-05-14-at-6.26.52-PM.jpeg",
+    "date": "Aug 2025",
+    "credentialUrl": ""
+  },
+  {
+    "id": 5,
+    "title": "Python Intermediate",
+    "platform": "sololearn",
+    "description": "Advanced proficiency in Python.",
+    "img": "/uploads/1778758121048-intermedia.jpeg",
+    "date": "May 2025",
+    "credentialUrl": ""
+  }
+]

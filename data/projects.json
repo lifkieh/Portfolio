@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "title": "Catalog Dua Naga Perkasa",
+    "description": "Catalog website of PT Dua Naga Perkasa",
+    "img": "/images/nagaper.jpg",
+    "tech": [
+      "SQL",
+      "PHP"
+    ],
+    "link": "",
+    "github": "https://github.com/lifkieh/PT-DuaNagaPerkasa.git",
+    "longDescription": "Judul Esai Lorem Ipsum\nPendahuluan\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nPembahasan Utama\nCurabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor.\n\nAnalisis Lanjutan\nVestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla a neque. Aenean laoreet.\n\nKesimpulan\nFusce tellus odio, dapibus id, fermentum quis, suscipit id, erat. Donec venenatis consequat nisl. Sed est. Phasellus sit amet erat. Donec sit amet neque. Praesent quis tellus vitae turpis dignissim elementum. Aliquam nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed nulla. Aliquam placerat. Suspendisse potenti. Nam enim risus, rhoncus varius, egestas sed, finibus vitae, justo. Quisque nunc lorem, imperdiet qut."
+  },
+  {
+    "id": 2,
+    "title": "Galley La Hall",
+    "description": "3D game",
+    "img": "/images/galleylahall.jpg",
+    "tech": [
+      "UNITY 3D",
+      "C#"
+    ],
+    "link": "https://vinnyvv.itch.io/galley-la-halls",
+    "github": ""
+  },
+  {
+    "id": 3,
+    "title": "Kalimantan Barat",
+    "description": "About West Borneo",
+    "img": "/images/indahnya.jpg",
+    "tech": [
+      "HTML"
+    ],
+    "link": "https://indahnyakalimantanbarat.vercel.app/",
+    "github": "https://github.com/lifkieh/KalimantanBarat"
+  },
+  {
+    "id": 4,
+    "title": "Crimson Down The Creek",
+    "description": "Visual Novel Game",
+    "img": "/images/CrimsonD.png",
+    "tech": [
+      "PYTHON",
+      "RENPY"
+    ],
+    "link": "https://vnjcafeumn.itch.io/crimson-down-the-creek",
+    "github": ""
+  },
+  {
+    "id": 5,
+    "title": "Motion Words",
+    "description": "An interactive learning platform for sign language education. Learn BISINDO, SIBI, and  ASL through visual tutors, word translation, and voice interaction to bridging Indonesian sign language to the world.",
+    "longDescription": "",
+    "img": "/uploads/1778758692808-Screenshot-2026-05-14-183750.png",
+    "tech": [
+      "TypeScript--Python"
+    ],
+    "link": "https://motionwords.vercel.app/",
+    "github": "https://github.com/lifkieh/MotionWords"
+  },
+  {
+    "id": 6,
+    "title": "Customer Segmentation",
+    "description": "This research applies unsupervised machine learning, K-Means and Gaussian Mixture Model (GMM), to segment over 700,000 e-commerce transactions from the Kaggle \"Online Retail II\" dataset into four meaningful customer behavior clusters: Loyal, Dormant Loyal, Lost, and New Customers.",
+    "longDescription": "",
+    "img": "",
+    "tech": [],
+    "link": "",
+    "github": ""
+  }
+]

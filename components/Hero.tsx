@@ -10,9 +10,14 @@ import {
   Lock, 
   AlertCircle 
 } from "lucide-react";
-import { projects } from "@/data/projects";
+import type { Project, AboutData } from "@/data/projects";
 
-export default function Hero() {
+interface HeroProps {
+  projects: Project[];
+  about: AboutData;
+}
+
+export default function Hero({ projects, about }: HeroProps) {
   const [currentIndex, setCurrentIndex] = useState<number>(0);
   const [direction, setDirection] = useState<number>(0);
   
@@ -34,7 +39,7 @@ export default function Hero() {
     setCurrentIndex((prev) =>
       prev === projects.length - 1 ? 0 : prev + 1
     );
-  }, []);
+  }, [projects.length]);
 
   const prevSlide = () => {
     setDirection(-1);
@@ -86,6 +91,7 @@ export default function Hero() {
   };
 
   const project = projects[currentIndex];
+  if (!project) return null;
 
   // 1. Cek Link GitHub (Menggunakan properti 'github' dari data)
   const hasGithubLink = project.github && project.github.trim() !== "" && project.github !== "#";
@@ -122,7 +128,7 @@ export default function Hero() {
               transition={{ delay: 0.1 }}
               className="text-6xl md:text-8xl font-black tracking-tighter text-slate-900 dark:text-white leading-[0.9]"
             >
-              Lifkie Lie{" "}
+              {about.name}{" "}
               <span className="text-slate-300 dark:text-slate-700">—</span>
             </motion.h1>
 
@@ -132,16 +138,12 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
               className="text-xl text-slate-600 dark:text-slate-400 max-w-lg"
             >
-              A STUDENT OF{" "}
-              <span className="font-medium text-slate-900 dark:text-white">
-                MULTIMEDIA NUSANTARA UNIVERSITY
-              </span>
-              , 2023 – 2027.
+              {about.subtitle}
             </motion.p>
 
             <div className="mt-10 flex gap-4">
               <a
-                href="https://github.com/lifkieh"
+                href={about.githubUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-7 py-4 rounded-2xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold shadow-xl hover:scale-105 active:scale-95 transition"
@@ -204,7 +206,7 @@ export default function Hero() {
                       </h3>
 
                       <p className="mt-3 text-slate-600 dark:text-slate-300 text-sm italic line-clamp-2 font-medium">
-                        "{project.description}"
+                        &quot;{project.description}&quot;
                       </p>
 
                       <div className="mt-6 flex flex-wrap gap-2">
@@ -315,16 +317,6 @@ export default function Hero() {
               bg-slate-900 dark:bg-white 
               text-white dark:text-slate-900 
               border border-white/10
-              
-              /* CSS UNTUK EKOR BUBBLE CHAT */
-              after:content-[''] 
-              after:absolute 
-              after:top-full 
-              after:left-1/2 
-              after:-translate-x-1/2 
-              after:border-[8px] 
-              after:border-transparent 
-              after:border-t-slate-900 dark:after:border-t-white
             `}
           >
             <AlertCircle size={24} className="text-pink-500" />

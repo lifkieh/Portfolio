@@ -2,11 +2,6 @@
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
 
-const skills = [
-  'React', 'Next.js', 'Java', 'PHP', 'Kotlin', 'Tailwind',
-  'TypeScript', 'REST API', 'Laravel', 'HTML', 'Firebase Authentication',
-]
-
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -20,7 +15,11 @@ const item: Variants = {
   show: { opacity: 1, y: 0 },
 }
 
-export default function Skills() {
+interface SkillsProps {
+  items: string[]
+}
+
+export default function Skills({ items }: SkillsProps) {
   return (
     <div>
       {/* Header diperbesar: text-sm -> text-xl */}
@@ -32,7 +31,7 @@ export default function Skills() {
         animate="show"
         className="flex flex-wrap gap-2.5"
       >
-        {skills.map((s) => (
+        {items.map((s) => (
           <motion.span
             key={s}
             variants={item}
@@ -45,9 +44,6 @@ export default function Skills() {
               bg-white/5
               text-slate-600
             "
-            // Perubahan CSS:
-            // 1. px-2.5 py-1 -> px-3.5 py-1.5 (Padding lebih lega)
-            // 2. text-xs -> text-base (Font lebih besar)
           >
             {s}
           </motion.span>

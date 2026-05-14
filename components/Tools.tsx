@@ -2,11 +2,6 @@
 import React from 'react'
 import { motion, Variants } from 'framer-motion'
 
-const toolsList = [
-  'Git', 'GitHub', 'Vercel', 'Firebase', 'MySQL', 
-  , 'VS Code', 'Android Studio', 'UNITY',
-]
-
 const container: Variants = {
   hidden: { opacity: 0 },
   show: {
@@ -20,11 +15,15 @@ const item: Variants = {
   show: { opacity: 1, y: 0 },
 }
 
-export default function Tools() {
+interface ToolsProps {
+  items: string[]
+}
+
+export default function Tools({ items }: ToolsProps) {
   return (
     <div>
       {/* Header diperbesar: text-sm -> text-xl */}
-      <h4 className="text-xl font-bold mb-4">Tools & Platforms</h4>
+      <h4 className="text-xl font-bold mb-4">Tools &amp; Platforms</h4>
 
       <motion.div
         variants={container}
@@ -32,7 +31,7 @@ export default function Tools() {
         animate="show"
         className="flex flex-wrap gap-2.5"
       >
-        {toolsList.map((tool) => (
+        {items.map((tool) => (
           <motion.span
             key={tool}
             variants={item}
@@ -45,9 +44,6 @@ export default function Tools() {
               bg-white/5
               text-slate-600
             "
-             // Perubahan CSS:
-            // 1. px-2.5 py-1 -> px-3.5 py-1.5
-            // 2. text-xs -> text-base
           >
             {tool}
           </motion.span>

@@ -1,0 +1,25 @@
+{
+  "skills": [
+    "React",
+    "Next.js",
+    "Java",
+    "PHP",
+    "Kotlin",
+    "Tailwind",
+    "TypeScript",
+    "REST API",
+    "Laravel",
+    "HTML",
+    "Firebase Authentication"
+  ],
+  "tools": [
+    "Git",
+    "GitHub",
+    "Vercel",
+    "Firebase",
+    "MySQL",
+    "VSCODE",
+    "Android Studio",
+    "Unity"
+  ]
+}

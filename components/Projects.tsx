@@ -1,9 +1,13 @@
 'use client'
 import React from 'react'
 import ProjectCard from './ProjectCard'
-import { projects } from '../data/projects'
+import type { Project } from '@/data/projects'
 
-export default function Projects() {
+interface ProjectsProps {
+  projects: Project[]
+}
+
+export default function Projects({ projects }: ProjectsProps) {
   return (
     <section id="projects" className="section-pad">
       <div className="max-w-6xl mx-auto px-6">
