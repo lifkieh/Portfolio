@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { put } from '@vercel/blob';
 
 const ADMIN_PASSWORD = 'yangtertampan';
 
@@ -21,20 +22,22 @@ export async function POST(req: NextRequest) {
     const bytes = await file.arrayBuffer();
     const buffer = Buffer.from(bytes);
 
-    // Bikin folder uploads di public/ jika belum ada
+    const uniqueFilename = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`;
+
+    // If Vercel Blob is configured, upload there
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      const blob = await put(uniqueFilename, file, { access: 'public' });
+      return NextResponse.json({ success: true, url: blob.url });
+    }
+
+    // Fallback to local fs if not configured
     const uploadDir = path.join(process.cwd(), 'public', 'uploads');
     if (!fs.existsSync(uploadDir)) {
       fs.mkdirSync(uploadDir, { recursive: true });
     }
 
-    // Nama file unik
-    const uniqueFilename = `${Date.now()}-${file.name.replace(/\s+/g, '-')}`;
     const filePath = path.join(uploadDir, uniqueFilename);
-
-    // Simpan file
     fs.writeFileSync(filePath, buffer);
-
-    // Kembalikan URL relatif
     const fileUrl = `/uploads/${uniqueFilename}`;
 
     return NextResponse.json({ success: true, url: fileUrl });

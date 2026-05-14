@@ -1,6 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import fs from 'fs';
 import path from 'path';
+import { Redis } from '@upstash/redis';
+
+const redis = process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN 
+  ? new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    })
+  : null;
 
 const ADMIN_USERNAME = 'lifkie tampan';
 const ADMIN_PASSWORD = 'yangtertampan';
@@ -26,6 +34,10 @@ export async function GET(req: NextRequest) {
   }
 
   try {
+    if (redis) {
+      const data = await redis.get(section);
+      if (data) return NextResponse.json(data);
+    }
     const raw = fs.readFileSync(filePath, 'utf-8');
     const data = JSON.parse(raw);
     return NextResponse.json(data);
@@ -59,7 +71,11 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: 'Invalid section' }, { status: 400 });
     }
 
-    fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+    if (redis) {
+      await redis.set(section, data);
+    } else {
+      fs.writeFileSync(filePath, JSON.stringify(data, null, 2), 'utf-8');
+    }
 
     return NextResponse.json({ success: true });
   } catch {

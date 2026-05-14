@@ -1,5 +1,13 @@
 import fs from 'fs';
 import path from 'path';
+import { Redis } from '@upstash/redis';
+
+const redis = process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN 
+  ? new Redis({
+      url: process.env.UPSTASH_REDIS_REST_URL,
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
+    })
+  : null;
 
 export type Project = {
   id: number
@@ -15,8 +23,12 @@ export type Project = {
 
 const filePath = path.join(process.cwd(), 'data', 'projects.json');
 
-export function getProjects(): Project[] {
+export async function getProjects(): Promise<Project[]> {
   try {
+    if (redis) {
+      const data = await redis.get('projects');
+      if (data) return data as Project[];
+    }
     const raw = fs.readFileSync(filePath, 'utf-8');
     return JSON.parse(raw);
   } catch {
@@ -36,8 +48,12 @@ export type AboutData = {
 
 const aboutPath = path.join(process.cwd(), 'data', 'about.json');
 
-export function getAbout(): AboutData {
+export async function getAbout(): Promise<AboutData> {
   try {
+    if (redis) {
+      const data = await redis.get('about');
+      if (data) return data as AboutData;
+    }
     const raw = fs.readFileSync(aboutPath, 'utf-8');
     return JSON.parse(raw);
   } catch {
@@ -53,8 +69,12 @@ export type SkillsToolsData = {
 
 const skillsPath = path.join(process.cwd(), 'data', 'skills.json');
 
-export function getSkillsTools(): SkillsToolsData {
+export async function getSkillsTools(): Promise<SkillsToolsData> {
   try {
+    if (redis) {
+      const data = await redis.get('skills');
+      if (data) return data as SkillsToolsData;
+    }
     const raw = fs.readFileSync(skillsPath, 'utf-8');
     return JSON.parse(raw);
   } catch {
@@ -74,8 +94,12 @@ export type Certificate = {
 
 const certificatesPath = path.join(process.cwd(), 'data', 'certificates.json');
 
-export function getCertificates(): Certificate[] {
+export async function getCertificates(): Promise<Certificate[]> {
   try {
+    if (redis) {
+      const data = await redis.get('certificates');
+      if (data) return data as Certificate[];
+    }
     const raw = fs.readFileSync(certificatesPath, 'utf-8');
     return JSON.parse(raw);
   } catch {
