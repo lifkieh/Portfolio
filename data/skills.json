@@ -1,5 +1,6 @@
 {
   "skills": [
+    "Python",
     "React",
     "Next.js",
     "Java",
@@ -10,17 +11,23 @@
     "REST API",
     "Laravel",
     "HTML",
-    "Firebase Authentication"
+    "Firebase Authentication",
+    "MySQL",
+    "MariaDB"
   ],
   "tools": [
     "Git",
     "GitHub",
     "Vercel",
     "Firebase",
-    "MySQL",
     "VSCODE",
     "Android Studio",
-    "Unity"
+    "Unity",
+    "Docker"
   ],
-  "frameworks": []
+  "frameworks": [
+    "Filament",
+    "Node.js",
+    "TensorFlow"
+  ]
 }
