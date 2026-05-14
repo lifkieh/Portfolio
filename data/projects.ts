@@ -48,6 +48,7 @@ export function getAbout(): AboutData {
 export type SkillsToolsData = {
   skills: string[]
   tools: string[]
+  frameworks?: string[]
 }
 
 const skillsPath = path.join(process.cwd(), 'data', 'skills.json');
@@ -57,7 +58,7 @@ export function getSkillsTools(): SkillsToolsData {
     const raw = fs.readFileSync(skillsPath, 'utf-8');
     return JSON.parse(raw);
   } catch {
-    return { skills: [], tools: [] };
+    return { skills: [], tools: [], frameworks: [] };
   }
 }
 

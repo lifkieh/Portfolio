@@ -10,7 +10,7 @@
     ],
     "link": "",
     "github": "https://github.com/lifkieh/PT-DuaNagaPerkasa.git",
-    "longDescription": "Judul Esai Lorem Ipsum\nPendahuluan\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\n\nPembahasan Utama\nCurabitur pretium tincidunt lacus. Nulla gravida orci a odio. Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris. Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. Donec lobortis risus a elit. Etiam tempor. Ut ullamcorper, ligula eu tempor congue, eros est euismod turpis, id tincidunt sapien risus a quam. Maecenas fermentum consequat mi. Donec fermentum. Pellentesque malesuada nulla a mi. Duis sapien nunc, commodo et, interdum suscipit, sollicitudin et, dolor.\n\nAnalisis Lanjutan\nVestibulum tincidunt malesuada tellus. Ut ultrices ultrices enim. Curabitur sit amet mauris. Morbi in dui quis est pulvinar ullamcorper. Nulla facilisi. Integer lacinia sollicitudin massa. Cras metus. Sed aliquet risus a tortor. Integer id quam. Morbi mi. Quisque nisl felis, venenatis tristique, dignissim in, ultrices sit amet, augue. Proin sodales libero eget ante. Nulla a neque. Aenean laoreet.\n\nKesimpulan\nFusce tellus odio, dapibus id, fermentum quis, suscipit id, erat. Donec venenatis consequat nisl. Sed est. Phasellus sit amet erat. Donec sit amet neque. Praesent quis tellus vitae turpis dignissim elementum. Aliquam nulla. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed nulla. Aliquam placerat. Suspendisse potenti. Nam enim risus, rhoncus varius, egestas sed, finibus vitae, justo. Quisque nunc lorem, imperdiet qut."
+    "longDescription": "PT. Dua Naga Perkasa is an interactive product catalog website developed to help customers access product information more quickly, efficiently, and digitally. The platform was created for a bolt distribution company to improve how customers explore products, place orders, and obtain company-related information through a modern web-based system.\n\nThe website was built using the Laravel framework with the MVC (Model-View-Controller) architecture to ensure a structured, scalable, and responsive application. The main goal of the project was to simplify customer interaction while also improving the company’s operational efficiency in managing product information and order requests.\n\nMain Features\n\n1. Interactive product catalog displaying product names, prices, and technical specifications.\n2. Product search functionality to help users quickly find specific items.\n3. Online order form integrated into the website workflow.\n4. Company information pages including About Us, FAQ, and Blog sections.\n5. Responsive design optimized for desktop, tablet, and smartphone devices.\nAdmin management system for handling products and website administration.\n6. WhatsApp-based checkout flow to simplify customer communication and ordering process\n.\nTechnologies Used:\n\n1. Laravel Framework with MVC architecture.\n2. PHP-based backend development.\n3. Database management integration.\n4. Responsive UI/UX web design principles.\n5. Routing and authentication system using Laravel ecosystem.\n\nProject Objectives:\n\n1. Improve customer access to product information.\n2. Provide a more organized and informative digital catalog system.\n3. Simplify the ordering process through web-based interaction.\n4. Enhance operational efficiency for the company.\n5. Strengthen the company’s digital presence through modern web technology.\n\n"
   },
   {
     "id": 2,
@@ -22,7 +22,8 @@
       "C#"
     ],
     "link": "https://vinnyvv.itch.io/galley-la-halls",
-    "github": ""
+    "github": "",
+    "longDescription": "Galley La Halls is a first-person psychological horror game developed using Unity Engine, combining atmospheric exploration, anomaly detection mechanics, and observation-based puzzle gameplay inspired by the concept of infinite looping environments.\n\nIn this game, players take the role of a visitor trapped inside a mysterious art gallery. As players navigate through hallways and exhibition rooms, the environment gradually changes through subtle visual anomalies such as moving objects, altered paintings, distorted architecture, disappearing props, and unexpected environmental shifts. Players must rely on focus, memory, and observation skills to determine whether the current room is safe or contains an anomaly.\n\nCore Gameplay Systems: \n\n1. Observation-based anomaly detection.\n2. Infinite loop progression mechanics.\n3. Dynamic anomaly spawning system.\n4. Streak-based progression logic.\n5. Psychological horror atmosphere design.\n\nMy Responsibilities as Level Designer: \n\n1. Designed the looping corridor layout to ensure immersive and natural navigation flow.\n2. Strategically placed anomalies to balance visibility, difficulty, and player tension.\n3. Adjusted gameplay pacing to maintain psychological pressure without becoming repetitive.\n4. Conducted playtesting sessions to refine player experience and environmental interaction.\n\nTechnical Implementations:\n\n1. Weighted RNG anomaly spawning system.\n2. Non-repetitive anomaly cycling to avoid predictable gameplay patterns.\n3. Object pooling optimization for stable real-time performance.\n4. Cinematic fly mode for trailer production and environment showcasing.\n5. Seamless teleportation system to create continuous looping transitions without loading screens.\n\nVisual & Atmosphere Design:\n\n1. Dynamic and baked lighting systems.\n2. High-detail environmental storytelling.\n3. Museum-inspired architecture and interior composition.\n4. Liminal space atmosphere to create discomfort and suspense."
   },
   {
     "id": 3,
@@ -33,7 +34,8 @@
       "HTML"
     ],
     "link": "https://indahnyakalimantanbarat.vercel.app/",
-    "github": "https://github.com/lifkieh/KalimantanBarat"
+    "github": "https://github.com/lifkieh/KalimantanBarat",
+    "longDescription": "IndahnyaKalimantanBarat is a web-based platform developed to introduce the natural tourism destinations and culinary diversity of West Kalimantan to a broader audience. The project was created with the goal of providing accessible and informative digital content that helps users explore the beauty and historical background of the region.\n\nThe website focuses on promoting local tourism while also educating visitors about the identity and history of West Kalimantan through an engaging and visually appealing experience."
   },
   {
     "id": 4,
@@ -49,12 +51,13 @@
   },
   {
     "id": 5,
-    "title": "Motion Words",
+    "title": "MotionWords",
     "description": "An interactive learning platform for sign language education. Learn BISINDO, SIBI, and  ASL through visual tutors, word translation, and voice interaction to bridging Indonesian sign language to the world.",
-    "longDescription": "",
+    "longDescription": "MOTIONWORDS started from a simple concern: many people want to learn sign language, but access to structured and comparative learning resources is still limited, especially for Indonesian sign languages.\n\nTo address this, I developed an interactive learning platform that focuses on comparative sign language learning between SIBI, BISINDO, and ASL (American Sign Language). Instead of learning each language separately, users can directly compare gestures and meanings across the three systems, making the learning process more intuitive and accessible.\n\nWhy these three sign languages?\n\n1. SIBI represents the formal sign language system commonly used in educational institutions in Indonesia.\n2. BISINDO represents the natural and informal sign language widely used by the Deaf community in daily communication.\n3. ASL was chosen because it is one of the most internationally recognized sign languages, allowing Indonesian Deaf learners to connect with a broader global community.\n\nThrough this comparison-based approach, MOTIONWORDS aims to:\n\n1. Help Indonesian users learn both formal and informal sign language systems.\n2. Support Deaf individuals in learning internationally used sign languages.\n3. Introduce Indonesian sign languages to people outside Indonesia through a more understandable learning experience.\n4. Create a more inclusive environment where language learning is accessible to everyone, regardless of hearing ability.\n\nMOTIONWORDS is more than just a learning platform, it is an initiative to connect communities, cultures, and communication through technology.",
     "img": "/uploads/1778758692808-Screenshot-2026-05-14-183750.png",
     "tech": [
-      "TypeScript--Python"
+      "TypeScript",
+      "Python"
     ],
     "link": "https://motionwords.vercel.app/",
     "github": "https://github.com/lifkieh/MotionWords"
@@ -63,10 +66,24 @@
     "id": 6,
     "title": "Customer Segmentation",
     "description": "This research applies unsupervised machine learning, K-Means and Gaussian Mixture Model (GMM), to segment over 700,000 e-commerce transactions from the Kaggle \"Online Retail II\" dataset into four meaningful customer behavior clusters: Loyal, Dormant Loyal, Lost, and New Customers.",
-    "longDescription": "",
+    "longDescription": "This project focuses on leveraging e-commerce transaction data to better understand customer behavior through machine learning approaches. It was initiated from common challenges in digital marketing, such as ineffective promotions, low customer retention, and the lack of personalized customer experiences. Together with my team, I developed a customer segmentation framework based on real-world transactional data.\n\nIn this project, we implemented unsupervised machine learning techniques using K-Means and Gaussian Mixture Model (GMM) algorithms to group customers based on their purchasing behavior patterns. The analysis was built upon the RFM (Recency, Frequency, Monetary) framework and further enhanced with additional behavioral features such as Tenure and Spending Consistency to create more representative and interpretable customer segments.\n\nThe project utilized more than 1 million e-commerce transaction records, which underwent extensive data cleaning, preprocessing, feature engineering, clustering, and explainability analysis.\n\nThrough this research, we successfully identified several major customer groups, including:\n\n1. Loyal Customers — highly active customers with strong purchasing value.\n2. Dormant Loyal Customers — high-value customers who have recently become inactive.\n3. Lost Customers — long-term customers with low engagement activity.\n4. New Customers — recently acquired customers with limited transaction history.\n\nBeyond segmentation, this project also integrated Explainable AI (XAI) using SHAP (SHapley Additive exPlanations) to analyze the key factors influencing cluster formation. The results revealed that behavioral factors such as recency and spending consistency play a more significant role in determining customer loyalty than transaction value alone.\n\nThe primary goal of this project is to help businesses build more data-driven and personalized marketing strategies, including:\n\n1. Personalized promotions\n2. Customer retention strategies\n3. Reactivation campaigns\n4. Customer lifecycle analysis",
     "img": "",
     "tech": [],
     "link": "",
-    "github": ""
+    "github": "",
+    "documentUrl": "/uploads/1778784358401-Manuscript.pdf"
+  },
+  {
+    "id": 7,
+    "title": "Tuku Coffe - Android App Project",
+    "description": "Tuku Coffee is an Android-based mobile application designed to deliver a smarter, faster, and more personalized coffee ordering experience. ",
+    "longDescription": "Tuku Coffee is an Android-based mobile application designed to deliver a smarter, faster, and more personalized coffee ordering experience. This project focuses on combining mobile development, machine learning, and real-time data synchronization to improve the overall customer experience in digital coffee ordering services.\n\nOne of the core features of this application is the Smart Budget Recommendation System, powered by TensorFlow Lite. Through this feature, users can set their preferred spending limit, and the application will generate real-time menu recommendations based on their budget directly on the device. This transforms the application from a standard ordering platform into an intelligent recommendation system that assists users in making more efficient purchasing decisions.\n\nIn addition to the AI recommendation system, the application also includes:\n\n1. Real-time order notifications using Firebase Cloud Messaging (FCM).\n2. Google Maps integration to locate nearby Tuku Coffee branches through GPS.\n3. Digital payment simulation and QRIS experience with animated payment feedback.\n4. Admin dashboard for managing menus, vouchers, branches, promotions, and real-time order monitoring.\n5. Firebase Firestore integration for instant synchronization between customer and admin systems.\n\nThroughout the development process, the project focused not only on functionality, but also on implementing a modern and consistent UI/UX aligned with Tuku Coffee’s brand identity. The design system was built using a warm earthy color palette to create a cozy, modern, and premium coffee shop atmosphere.\n\nThis project also implemented:\n\n1. TensorFlow Lite for on-device AI inference.\n2. Modular Android architecture for scalability and maintainability.\n3. Role-based access management for both admin and customer systems.\n4. Real-time CRUD synchronization using the Firebase ecosystem.",
+    "img": "/uploads/1778784057160-Screenshot-2026-05-15-014047.png",
+    "tech": [
+      "Kotlin"
+    ],
+    "link": "",
+    "github": "https://github.com/shavellegau/map_umkm",
+    "documentUrl": ""
   }
 ]

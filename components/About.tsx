@@ -3,6 +3,7 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import Skills from './Skills'
 import Tools from './Tools'
+import Frameworks from './Frameworks'
 import type { AboutData, SkillsToolsData } from '@/data/projects'
 
 interface AboutProps {
@@ -68,6 +69,7 @@ export default function About({ about, skillsTools }: AboutProps) {
             <div className="flex flex-col gap-8 w-full"> 
               <Skills items={skillsTools.skills} />
               <Tools items={skillsTools.tools} />
+              <Frameworks items={skillsTools.frameworks || []} />
             </div>
           </div>
 

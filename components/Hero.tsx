@@ -189,15 +189,19 @@ export default function Hero({ projects, about }: HeroProps) {
                     exit="exit"
                     className="absolute inset-0 p-6 rounded-[2.5rem] bg-white/40 dark:bg-slate-900/40 backdrop-blur-2xl border-2 border-white/30 dark:border-white/10 shadow-2xl flex flex-col origin-center will-change-transform"
                   >
-                    <div className="relative h-64 rounded-[1.8rem] overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-sm">
+                    <div className="relative h-64 rounded-[1.8rem] overflow-hidden bg-slate-200 dark:bg-slate-800 shadow-sm flex items-center justify-center">
                       <div className="absolute top-4 right-4 z-10 px-4 py-1.5 rounded-full bg-white/90 dark:bg-slate-900/90 text-[10px] font-black text-pink-500 uppercase tracking-widest backdrop-blur-md">
                         PROJECT
                       </div>
-                      <img
-                        src={project.img}
-                        alt={project.title}
-                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
-                      />
+                      {project.img && project.img.trim() !== "" ? (
+                        <img
+                          src={project.img}
+                          alt={project.title}
+                          className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+                        />
+                      ) : (
+                        <span className="text-slate-400 font-bold uppercase tracking-widest text-xs z-0">No Image</span>
+                      )}
                     </div>
 
                     <div className="mt-8 px-2 flex flex-col flex-grow">

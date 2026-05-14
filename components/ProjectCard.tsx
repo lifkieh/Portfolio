@@ -19,11 +19,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
       >
         {/* IMAGE CONTAINER */}
         <div className="w-full h-44 overflow-hidden rounded-xl mb-4 bg-gray-100 dark:bg-slate-800">
-          <img
-            src={project.img || ""} 
-            alt={project.title}
-            className="w-full h-full object-cover"
-          />
+          {project.img && project.img.trim() !== "" ? (
+            <img
+              src={project.img} 
+              alt={project.title}
+              className="w-full h-full object-cover"
+            />
+          ) : (
+            <div className="w-full h-full flex items-center justify-center text-slate-400">
+              <span className="text-xs uppercase tracking-widest font-bold">No Image</span>
+            </div>
+          )}
         </div>
 
         {/* CONTENT SECTION */}
@@ -174,7 +180,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                   )}
                   {project.documentUrl && (
                     <a href={project.documentUrl} target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-xl bg-slate-100 dark:bg-white/10 text-slate-900 dark:text-white font-bold hover:bg-slate-200 dark:hover:bg-white/20 transition flex items-center gap-2 border border-slate-300 dark:border-white/20">
-                      <FileText size={20} /> View Document / Report
+                      <FileText size={20} /> Report
                     </a>
                   )}
                 </div>

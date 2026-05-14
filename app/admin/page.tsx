@@ -17,7 +17,7 @@ type CertificateItem = {
   id: number; title: string; platform: string;
   description: string; img: string; date: string; credentialUrl?: string;
 };
-type SkillsData = { skills: string[]; tools: string[] };
+type SkillsData = { skills: string[]; tools: string[]; frameworks?: string[] };
 
 export default function AdminPage() {
   const [password, setPassword] = useState('');
@@ -227,8 +227,7 @@ function ProjectsEditor({ projects, onChange, onSave, saving, password }: { proj
           </div>
           <div>
             <label className="block text-sm font-semibold text-slate-300 mb-1.5">Tech (comma-separated)</label>
-            <input value={p.tech.join(', ')} onChange={e => updateProject(i, 'tech', e.target.value.split(',').map(s => s.trim()).filter(Boolean))}
-              className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50" />
+            <TechInput initialTech={p.tech} onChange={val => updateProject(i, 'tech', val)} />
           </div>
         </div>
       ))}
@@ -311,21 +310,24 @@ function CertificatesEditor({ certificates, onChange, onSave, saving, password }
 function SkillsEditor({ data, onChange, onSave, saving }: { data: SkillsData; onChange: (d: SkillsData) => void; onSave: () => void; saving: boolean }) {
   const [skillsText, setSkillsText] = useState(data.skills.join(', '));
   const [toolsText, setToolsText] = useState(data.tools.join(', '));
+  const [frameworksText, setFrameworksText] = useState((data.frameworks || []).join(', '));
 
   const parseList = (text: string) => text.split(',').map(s => s.trim()).filter(Boolean);
 
   const handleSkillsBlur = () => onChange({ ...data, skills: parseList(skillsText) });
   const handleToolsBlur = () => onChange({ ...data, tools: parseList(toolsText) });
+  const handleFrameworksBlur = () => onChange({ ...data, frameworks: parseList(frameworksText) });
 
   // Preview tags dari teks saat ini (real-time)
   const skillsPreview = parseList(skillsText);
   const toolsPreview = parseList(toolsText);
+  const frameworksPreview = parseList(frameworksText);
 
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
-        <h2 className="text-xl font-bold">Skills & Tools</h2>
-        <button onClick={() => { handleSkillsBlur(); handleToolsBlur(); setTimeout(onSave, 50); }} disabled={saving} className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-rose-600 text-white font-bold shadow-lg shadow-pink-500/20 hover:brightness-110 active:scale-[0.98] transition disabled:opacity-50">
+        <h2 className="text-xl font-bold">Skills, Tools & Frameworks</h2>
+        <button onClick={() => { handleSkillsBlur(); handleToolsBlur(); handleFrameworksBlur(); setTimeout(onSave, 50); }} disabled={saving} className="px-6 py-2.5 rounded-xl bg-gradient-to-r from-pink-500 to-rose-600 text-white font-bold shadow-lg shadow-pink-500/20 hover:brightness-110 active:scale-[0.98] transition disabled:opacity-50">
           {saving ? 'Saving...' : 'Save Changes'}
         </button>
       </div>
@@ -335,7 +337,7 @@ function SkillsEditor({ data, onChange, onSave, saving }: { data: SkillsData; on
           <textarea value={skillsText} onChange={e => setSkillsText(e.target.value)} onBlur={handleSkillsBlur} rows={3}
             className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50 resize-none" />
           <div className="flex flex-wrap gap-2 mt-2">
-            {skillsPreview.map(s => <span key={s} className="px-3 py-1 text-xs rounded-full bg-pink-500/15 text-pink-300 border border-pink-500/20">{s}</span>)}
+            {skillsPreview.map(s => <span key={s} className="px-3 py-1 text-xs rounded-full bg-pink-500/15 text-pink-300 border border-pink-500/20 capitalize break-all max-w-full inline-block text-center">{s}</span>)}
           </div>
         </div>
         <div>
@@ -343,7 +345,15 @@ function SkillsEditor({ data, onChange, onSave, saving }: { data: SkillsData; on
           <textarea value={toolsText} onChange={e => setToolsText(e.target.value)} onBlur={handleToolsBlur} rows={3}
             className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50 resize-none" />
           <div className="flex flex-wrap gap-2 mt-2">
-            {toolsPreview.map(t => <span key={t} className="px-3 py-1 text-xs rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/20">{t}</span>)}
+            {toolsPreview.map(t => <span key={t} className="px-3 py-1 text-xs rounded-full bg-sky-500/15 text-sky-300 border border-sky-500/20 capitalize break-all max-w-full inline-block text-center">{t}</span>)}
+          </div>
+        </div>
+        <div>
+          <label className="block text-sm font-semibold text-slate-300 mb-1.5">Frameworks & Libraries (comma-separated)</label>
+          <textarea value={frameworksText} onChange={e => setFrameworksText(e.target.value)} onBlur={handleFrameworksBlur} rows={3}
+            className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-purple-500/50 resize-none" />
+          <div className="flex flex-wrap gap-2 mt-2">
+            {frameworksPreview.map(f => <span key={f} className="px-3 py-1 text-xs rounded-full bg-purple-500/15 text-purple-300 border border-purple-500/20 capitalize break-all max-w-full inline-block text-center">{f}</span>)}
           </div>
         </div>
       </div>
@@ -361,6 +371,32 @@ function Field({ label, value, onChange }: { label: string; value: string; onCha
       <input value={value} onChange={e => onChange(e.target.value)}
         className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50" />
     </div>
+  );
+}
+
+/* ════════════════════════════════════════════════
+   TECH INPUT FIELD
+   ════════════════════════════════════════════════ */
+function TechInput({ initialTech, onChange }: { initialTech: string[]; onChange: (v: string[]) => void }) {
+  const [text, setText] = useState(initialTech.join(', '));
+
+  // Sync state if initialTech changes externally (e.g., when adding/deleting projects)
+  useEffect(() => {
+    setText(initialTech.join(', '));
+  }, [initialTech]);
+
+  const handleBlur = () => {
+    onChange(text.split(',').map(s => s.trim()).filter(Boolean));
+  };
+
+  return (
+    <input
+      value={text}
+      onChange={e => setText(e.target.value)}
+      onBlur={handleBlur}
+      placeholder="e.g. React, Next.js, Tailwind"
+      className="w-full px-4 py-3 rounded-xl bg-white/10 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-pink-500/50"
+    />
   );
 }
 
