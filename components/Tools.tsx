@@ -36,13 +36,14 @@ export default function Tools({ items }: ToolsProps) {
             key={tool}
             variants={item}
             className="
-              px-3.5 py-1.5
+              px-4 py-2
               text-base
               font-medium
               rounded-full
-              border border-white/10
-              bg-white/5
-              text-slate-600
+              border border-slate-200 dark:border-white/10
+              bg-slate-50 dark:bg-white/5
+              text-slate-700 dark:text-slate-300
+              capitalize
             "
           >
             {tool}
