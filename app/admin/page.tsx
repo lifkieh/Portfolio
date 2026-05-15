@@ -195,6 +195,19 @@ function ProjectsEditor({ projects, onChange, onSave, saving, password }: { proj
   };
   const removeProject = (idx: number) => { const u = [...projects]; u.splice(idx, 1); onChange(u); };
 
+  const moveUp = (idx: number) => {
+    if (idx === 0) return;
+    const u = [...projects];
+    [u[idx - 1], u[idx]] = [u[idx], u[idx - 1]];
+    onChange(u);
+  };
+  const moveDown = (idx: number) => {
+    if (idx === projects.length - 1) return;
+    const u = [...projects];
+    [u[idx + 1], u[idx]] = [u[idx], u[idx + 1]];
+    onChange(u);
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between">
@@ -209,7 +222,13 @@ function ProjectsEditor({ projects, onChange, onSave, saving, password }: { proj
       {projects.map((p, i) => (
         <div key={p.id} className="p-6 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl space-y-4">
           <div className="flex items-center justify-between">
-            <span className="text-sm font-bold text-pink-400">Project #{p.id}</span>
+            <div className="flex items-center gap-3">
+              <span className="text-sm font-bold text-pink-400">Project #{p.id}</span>
+              <div className="flex gap-1">
+                <button onClick={() => moveUp(i)} disabled={i === 0} className="p-1 rounded bg-white/5 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed">↑</button>
+                <button onClick={() => moveDown(i)} disabled={i === projects.length - 1} className="p-1 rounded bg-white/5 hover:bg-white/10 disabled:opacity-30 disabled:cursor-not-allowed">↓</button>
+              </div>
+            </div>
             <button onClick={() => removeProject(i)} className="text-sm text-red-400 hover:text-red-300 transition">Delete</button>
           </div>
           <div className="grid md:grid-cols-2 gap-4">

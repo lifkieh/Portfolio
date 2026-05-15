@@ -23,7 +23,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             <img
               src={project.img} 
               alt={project.title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center text-slate-400">
@@ -46,9 +46,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             {project.tech.map((t) => (
               <span
                 key={t}
-                className="text-[10px] uppercase tracking-wider px-3 py-1 font-bold rounded-full border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-600 dark:text-slate-300"
+                className="text-[10px] uppercase tracking-wider px-3 py-1 font-bold rounded-full border border-white/10 bg-white/5 text-slate-300"
               >
-                {t}
+                {t.trim()}
               </span>
             ))}
           </div>
@@ -131,15 +131,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.img && (
                 <div className="w-full h-64 sm:h-80 md:h-96 shrink-0 relative">
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent z-10" />
-                  <img src={project.img} alt={project.title} className="w-full h-full object-cover" />
+                  <img src={project.img} alt={project.title} className="w-full h-full object-cover object-center" />
                   <div className="absolute bottom-0 left-0 p-6 sm:p-10 z-20 w-full">
                     <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
                       {project.title}
                     </h2>
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((t) => (
-                        <span key={t} className="text-xs uppercase tracking-wider px-3 py-1 font-bold rounded-full bg-white/20 text-white backdrop-blur-md border border-white/10">
-                          {t}
+                        <span key={t} className="text-xs uppercase tracking-wider px-3 py-1 font-bold rounded-full bg-white/10 text-white backdrop-blur-md border border-white/10">
+                          {t.trim()}
                         </span>
                       ))}
                     </div>
@@ -155,8 +155,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
                     </h2>
                     <div className="flex flex-wrap gap-2 mb-8">
                       {project.tech.map((t) => (
-                        <span key={t} className="text-xs uppercase tracking-wider px-3 py-1 font-bold rounded-full bg-slate-100 dark:bg-white/10 text-slate-700 dark:text-slate-300">
-                          {t}
+                        <span key={t} className="text-xs uppercase tracking-wider px-3 py-1 font-bold rounded-full bg-white/10 text-slate-300 border border-white/10">
+                          {t.trim()}
                         </span>
                       ))}
                     </div>

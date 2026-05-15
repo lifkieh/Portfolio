@@ -1,5 +1,6 @@
 'use client'
 
+import Navbar from '@/components/Navbar'
 import Hero from '@/components/Hero'
 import About from '@/components/About'
 import Projects from '@/components/Projects'
@@ -18,6 +19,7 @@ interface Props {
 export default function HomeClient({ projects, about, skillsTools, certificates }: Props) {
   return (
     <div className="min-h-screen bg-transparent text-slate-900 dark:text-slate-100">
+      <Navbar />
       <main>
         <Hero projects={projects} about={about} />
         <About about={about} skillsTools={skillsTools} />

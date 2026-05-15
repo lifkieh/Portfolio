@@ -52,12 +52,12 @@
   {
     "id": 5,
     "title": "MotionWords",
-    "description": "An interactive learning platform for sign language education. Learn BISINDO, SIBI, and  ASL through visual tutors, word translation, and voice interaction to bridging Indonesian sign language to the world.",
+    "description": "Sign Language Learning Platform",
     "longDescription": "MOTIONWORDS started from a simple concern: many people want to learn sign language, but access to structured and comparative learning resources is still limited, especially for Indonesian sign languages.\n\nTo address this, I developed an interactive learning platform that focuses on comparative sign language learning between SIBI, BISINDO, and ASL (American Sign Language). Instead of learning each language separately, users can directly compare gestures and meanings across the three systems, making the learning process more intuitive and accessible.\n\nWhy these three sign languages?\n\n1. SIBI represents the formal sign language system commonly used in educational institutions in Indonesia.\n2. BISINDO represents the natural and informal sign language widely used by the Deaf community in daily communication.\n3. ASL was chosen because it is one of the most internationally recognized sign languages, allowing Indonesian Deaf learners to connect with a broader global community.\n\nThrough this comparison-based approach, MOTIONWORDS aims to:\n\n1. Help Indonesian users learn both formal and informal sign language systems.\n2. Support Deaf individuals in learning internationally used sign languages.\n3. Introduce Indonesian sign languages to people outside Indonesia through a more understandable learning experience.\n4. Create a more inclusive environment where language learning is accessible to everyone, regardless of hearing ability.\n\nMOTIONWORDS is more than just a learning platform, it is an initiative to connect communities, cultures, and communication through technology.",
     "img": "/uploads/1778758692808-Screenshot-2026-05-14-183750.png",
     "tech": [
-      "TypeScript",
-      "Python"
+      "TYPESCRIPT",
+      "PYTHON"
     ],
     "link": "https://motionwords.vercel.app/",
     "github": "https://github.com/lifkieh/MotionWords",
@@ -66,10 +66,13 @@
   {
     "id": 6,
     "title": "Customer Segmentation",
-    "description": "This research applies unsupervised machine learning, K-Means and Gaussian Mixture Model (GMM), to segment over 700,000 e-commerce transactions from the Kaggle \"Online Retail II\" dataset into four meaningful customer behavior clusters: Loyal, Dormant Loyal, Lost, and New Customers.",
+    "description": "Unsupervised machine learning",
     "longDescription": "This project focuses on leveraging e-commerce transaction data to better understand customer behavior through machine learning approaches. It was initiated from common challenges in digital marketing, such as ineffective promotions, low customer retention, and the lack of personalized customer experiences. Together with my team, I developed a customer segmentation framework based on real-world transactional data.\n\nIn this project, we implemented unsupervised machine learning techniques using K-Means and Gaussian Mixture Model (GMM) algorithms to group customers based on their purchasing behavior patterns. The analysis was built upon the RFM (Recency, Frequency, Monetary) framework and further enhanced with additional behavioral features such as Tenure and Spending Consistency to create more representative and interpretable customer segments.\n\nThe project utilized more than 1 million e-commerce transaction records, which underwent extensive data cleaning, preprocessing, feature engineering, clustering, and explainability analysis.\n\nThrough this research, we successfully identified several major customer groups, including:\n\n1. Loyal Customers — highly active customers with strong purchasing value.\n2. Dormant Loyal Customers — high-value customers who have recently become inactive.\n3. Lost Customers — long-term customers with low engagement activity.\n4. New Customers — recently acquired customers with limited transaction history.\n\nBeyond segmentation, this project also integrated Explainable AI (XAI) using SHAP (SHapley Additive exPlanations) to analyze the key factors influencing cluster formation. The results revealed that behavioral factors such as recency and spending consistency play a more significant role in determining customer loyalty than transaction value alone.\n\nThe primary goal of this project is to help businesses build more data-driven and personalized marketing strategies, including:\n\n1. Personalized promotions\n2. Customer retention strategies\n3. Reactivation campaigns\n4. Customer lifecycle analysis",
-    "img": "",
-    "tech": [],
+    "img": "/uploads/1778836253655-Screenshot-2026-05-15-160853.png",
+    "tech": [
+      "PYTHON",
+      "MACHINE LEARNING"
+    ],
     "link": "",
     "github": "",
     "documentUrl": "/uploads/1778784358401-Manuscript.pdf"
@@ -77,11 +80,11 @@
   {
     "id": 7,
     "title": "Tuku Coffe - Android App Project",
-    "description": "Tuku Coffee is an Android-based mobile application designed to deliver a smarter, faster, and more personalized coffee ordering experience. ",
+    "description": "Android Based Mobile Application",
     "longDescription": "Tuku Coffee is an Android-based mobile application designed to deliver a smarter, faster, and more personalized coffee ordering experience. This project focuses on combining mobile development, machine learning, and real-time data synchronization to improve the overall customer experience in digital coffee ordering services.\n\nOne of the core features of this application is the Smart Budget Recommendation System, powered by TensorFlow Lite. Through this feature, users can set their preferred spending limit, and the application will generate real-time menu recommendations based on their budget directly on the device. This transforms the application from a standard ordering platform into an intelligent recommendation system that assists users in making more efficient purchasing decisions.\n\nIn addition to the AI recommendation system, the application also includes:\n\n1. Real-time order notifications using Firebase Cloud Messaging (FCM).\n2. Google Maps integration to locate nearby Tuku Coffee branches through GPS.\n3. Digital payment simulation and QRIS experience with animated payment feedback.\n4. Admin dashboard for managing menus, vouchers, branches, promotions, and real-time order monitoring.\n5. Firebase Firestore integration for instant synchronization between customer and admin systems.\n\nThroughout the development process, the project focused not only on functionality, but also on implementing a modern and consistent UI/UX aligned with Tuku Coffee’s brand identity. The design system was built using a warm earthy color palette to create a cozy, modern, and premium coffee shop atmosphere.\n\nThis project also implemented:\n\n1. TensorFlow Lite for on-device AI inference.\n2. Modular Android architecture for scalability and maintainability.\n3. Role-based access management for both admin and customer systems.\n4. Real-time CRUD synchronization using the Firebase ecosystem.",
     "img": "/uploads/1778784057160-Screenshot-2026-05-15-014047.png",
     "tech": [
-      "Kotlin"
+      "KOTLIN"
     ],
     "link": "",
     "github": "https://github.com/shavellegau/map_umkm",

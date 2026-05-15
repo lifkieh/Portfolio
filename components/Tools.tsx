@@ -40,13 +40,13 @@ export default function Tools({ items }: ToolsProps) {
               text-base
               font-medium
               rounded-full
-              border border-slate-200 dark:border-white/10
-              bg-slate-50 dark:bg-white/5
-              text-slate-700 dark:text-slate-300
+              border border-white/10
+              bg-white/5
+              text-slate-300
               capitalize
             "
           >
-            {tool}
+            {tool.trim()}
           </motion.span>
         ))}
       </motion.div>

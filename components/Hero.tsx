@@ -217,9 +217,9 @@ export default function Hero({ projects, about }: HeroProps) {
                         {project.tech.map((t) => (
                           <span
                             key={t}
-                            className="text-[10px] uppercase tracking-wider px-3 py-1 font-bold rounded-full border border-slate-200 dark:border-white/10 bg-slate-50 dark:bg-white/5 text-slate-600 dark:text-slate-300 backdrop-blur-md"
+                            className="text-[10px] uppercase tracking-wider px-3 py-1 font-bold rounded-full border border-white/10 bg-white/5 text-slate-300 backdrop-blur-md"
                           >
-                            {t}
+                            {t.trim()}
                           </span>
                         ))}
                       </div>
