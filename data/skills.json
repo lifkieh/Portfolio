@@ -13,7 +13,8 @@
     "HTML",
     "Firebase Authentication",
     "MySQL",
-    "MariaDB"
+    "MariaDB",
+    "Supabase"
   ],
   "tools": [
     "Git",
@@ -23,11 +24,13 @@
     "VSCODE",
     "Android Studio",
     "Unity",
-    "Docker"
+    "Docker",
+    "Supabase"
   ],
   "frameworks": [
     "Filament",
     "Node.js",
-    "TensorFlow"
+    "TensorFlow",
+    "OpenAI SDK"
   ]
 }
