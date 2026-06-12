@@ -7,6 +7,7 @@ import Projects from '@/components/Projects'
 import Certificates from '@/components/Certificates'
 import Contact from '@/components/Contact'
 import Footer from '@/components/Footer'
+import ThemeCanvas from '@/components/ThemeCanvas'
 import type { Project, AboutData, SkillsToolsData, Certificate } from '@/data/projects'
 
 interface Props {
@@ -19,6 +20,18 @@ interface Props {
 export default function HomeClient({ projects, about, skillsTools, certificates }: Props) {
   return (
     <div className="min-h-screen bg-transparent text-slate-900 dark:text-slate-100">
+      {/* Canvas layer — behind everything */}
+      <ThemeCanvas />
+      
+      {/* Cyberpunk city glow — CSS only overlay */}
+      <div className="city-glow fixed bottom-0 left-0 right-0 h-[30vh] pointer-events-none z-0" />
+      
+      {/* Scanlines overlay */}
+      <div className="scanlines-overlay fixed inset-0 pointer-events-none z-[2]" />
+      
+      {/* Game pixel grid */}
+      <div className="pixel-grid fixed inset-0 pointer-events-none z-[1]" />
+
       <Navbar />
       <main>
         <Hero projects={projects} about={about} />

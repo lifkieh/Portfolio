@@ -1,0 +1,86 @@
+[
+  {
+    "id": "3vjkdf",
+    "prompt": "gunung berapi",
+    "slug": "volcano-blaze",
+    "mood": "Intense and fiery",
+    "filename": "1781216371372_volcano-blaze_3vjkdf.css",
+    "generatedAt": "2026-06-11T22:19:31.372Z",
+    "colors": {
+      "bgPrimary": "#3B0B0B",
+      "bgSecondary": "#7A2828",
+      "bgTertiary": "#FF9900",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#CCCCCC",
+      "accent": "#FF3737",
+      "accentSoft": "#FF6666",
+      "glassBg": "rgba(255, 255, 255, 0.2)",
+      "glassBorder": "rgba(255, 255, 255, 0.1)",
+      "ambientA": "#660033",
+      "ambientB": "#330033"
+    }
+  },
+  {
+    "id": "1ktvu2",
+    "prompt": "rainy animation theme",
+    "slug": "rainy-night",
+    "mood": "calm and soothing",
+    "filename": "1781216438172_rainy-night_1ktvu2.css",
+    "generatedAt": "2026-06-11T22:20:38.172Z",
+    "colors": {
+      "bgPrimary": "#2c3e50",
+      "bgSecondary": "#34495e",
+      "bgTertiary": "#4c5154",
+      "textPrimary": "#ecf0f1",
+      "textSecondary": "#bdc3c7",
+      "accent": "#3498db",
+      "accentSoft": "#5c7080",
+      "glassBg": "rgba(52, 73, 94, 0.2)",
+      "glassBorder": "rgba(52, 73, 94, 0.5)",
+      "ambientA": "#1a1d23",
+      "ambientB": "#2f343a"
+    }
+  },
+  {
+    "id": "pza57a",
+    "prompt": "rainy animation theme",
+    "slug": "rainy-night",
+    "mood": "Calming",
+    "filename": "1781216457367_rainy-night_pza57a.css",
+    "generatedAt": "2026-06-11T22:20:57.367Z",
+    "colors": {
+      "bgPrimary": "#2f4f7f",
+      "bgSecondary": "#455a64",
+      "bgTertiary": "#646d7e",
+      "textPrimary": "#ffffff",
+      "textSecondary": "#cccccc",
+      "accent": "#3498db",
+      "accentSoft": "#66d9ef",
+      "glassBg": "rgba(45, 65, 85, 0.5)",
+      "glassBorder": "rgba(69, 90, 100, 0.2)",
+      "ambientA": "#1a1d23",
+      "ambientB": "#3b414c"
+    }
+  },
+  {
+    "id": "dc8dvg",
+    "prompt": "volcano",
+    "slug": "volcano",
+    "mood": "Inferno",
+    "filename": "1781221518173_volcano_dc8dvg.css",
+    "generatedAt": "2026-06-11T23:45:18.173Z",
+    "colors": {
+      "bgPrimary": "#3B0B0B",
+      "bgSecondary": "#6c2f2f",
+      "bgTertiary": "#9e4b4b",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#ccc",
+      "accent": "#FF9900",
+      "accentSoft": "#FFC499",
+      "glassBg": "rgba(255, 255, 255, 0.1)",
+      "glassBorder": "rgba(255, 255, 255, 0.3)",
+      "ambientA": "#660000",
+      "ambientB": "#990033"
+    }
+  }
+]

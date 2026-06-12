@@ -127,3 +127,194 @@ textarea::placeholder {
 .dark textarea::placeholder {
   color: #9ca3af;
 }
+
+/* ------------------------------------------------------
+   PRESET THEMES (SERENOVA INTENT)
+------------------------------------------------------- */
+
+/* THEME: MINIMAL */
+html.theme-minimal body {
+  background: #fafafa;
+  color: #111;
+}
+html.theme-minimal.dark body {
+  background: #0a0a0a;
+  color: #f0f0f0;
+}
+html.theme-minimal .bg-ambient,
+html.theme-minimal.dark .bg-ambient {
+  background: none;
+}
+html.theme-minimal .glass {
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(0,0,0,0.1);
+  backdrop-filter: none;
+}
+html.theme-minimal.dark .glass {
+  background: rgba(20,20,20,0.8);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: none;
+}
+
+/* THEME: ASTRO */
+html.theme-astro body {
+  background: linear-gradient(to bottom right, #e8f4ff, #dbeafe);
+  color: #0c4a6e;
+}
+html.theme-astro.dark body {
+  background: linear-gradient(to bottom right, #030712, #0a1628, #0d1b3e);
+  color: #e0f2fe;
+}
+html.theme-astro.dark .bg-ambient {
+  background: 
+    radial-gradient(circle at top left, rgba(56,189,248,0.15) 0%, transparent 60%),
+    radial-gradient(circle at bottom right, rgba(59,130,246,0.15) 0%, transparent 60%);
+}
+html.theme-astro.dark .glass {
+  background: rgba(14, 30, 70, 0.6);
+  border-color: rgba(100, 180, 255, 0.2);
+}
+
+/* THEME: GAME */
+html.theme-game body {
+  background: linear-gradient(to bottom right, #f0fdf4, #ecfdf5);
+  color: #14532d;
+}
+html.theme-game.dark body {
+  background: linear-gradient(to bottom right, #020c02, #0a1a0a, #061206);
+  color: #86efac;
+}
+html.theme-game.dark .bg-ambient {
+  background: 
+    radial-gradient(circle at top right, rgba(74,222,128,0.1) 0%, transparent 60%),
+    radial-gradient(circle at bottom left, rgba(34,197,94,0.15) 0%, transparent 60%);
+}
+html.theme-game.dark .glass {
+  background: rgba(0, 30, 0, 0.7);
+  border-color: rgba(74, 222, 128, 0.25);
+}
+
+/* THEME: CYBERPUNK */
+html.theme-cyberpunk body {
+  background: linear-gradient(to bottom right, #fff9f0, #fff3e0);
+  color: #4a044e;
+}
+html.theme-cyberpunk.dark body {
+  background: linear-gradient(to bottom right, #0a0005, #150010, #0d000a);
+  color: #f9a8d4;
+}
+html.theme-cyberpunk.dark .bg-ambient {
+  background: 
+    radial-gradient(circle at top center, rgba(236,72,153,0.15) 0%, transparent 60%),
+    radial-gradient(circle at bottom left, rgba(219,39,119,0.15) 0%, transparent 60%);
+}
+html.theme-cyberpunk.dark .glass {
+  background: rgba(40, 0, 30, 0.7);
+  border-color: rgba(244, 114, 182, 0.3);
+}
+
+/* ===== THEME ANIMATION HELPERS ===== */
+
+/* Cyberpunk scanlines */
+html.theme-cyberpunk .scanlines-overlay {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  opacity: 0.06;
+  animation: cyber-scan 8s linear infinite;
+}
+
+@keyframes cyber-scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Cyberpunk city glow */
+html.theme-cyberpunk .city-glow {
+  background: radial-gradient(ellipse at bottom, rgba(236,72,153,0.6) 0%, transparent 70%);
+  opacity: 0.12;
+}
+
+/* Game scanlines */
+html.theme-game .scanlines-overlay {
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 1px,
+    rgba(0, 0, 0, 0.1) 1px,
+    rgba(0, 0, 0, 0.1) 2px
+  );
+  opacity: 0.03;
+  animation: game-scan 8s linear infinite;
+}
+
+@keyframes game-scan {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(100vh); }
+}
+
+/* Game pixel grid overlay */
+html.theme-game .pixel-grid {
+  background-image: 
+    linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.2) 1px, transparent 1px);
+  background-size: 32px 32px;
+  opacity: 0.04;
+}
+
+/* Cyberpunk glitch text effect — apply ke heading kalau mau */
+html.theme-cyberpunk .glitch-text {
+  position: relative;
+}
+html.theme-cyberpunk .glitch-text::before,
+html.theme-cyberpunk .glitch-text::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+html.theme-cyberpunk .glitch-text::before {
+  left: 2px;
+  text-shadow: -2px 0 red;
+  clip-path: inset(10% 0 30% 0);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
+}
+html.theme-cyberpunk .glitch-text::after {
+  left: -2px;
+  text-shadow: -2px 0 blue;
+  clip-path: inset(60% 0 10% 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+@keyframes glitch-anim-1 {
+  0% { clip-path: inset(20% 0 80% 0); }
+  20% { clip-path: inset(60% 0 10% 0); }
+  40% { clip-path: inset(40% 0 50% 0); }
+  60% { clip-path: inset(80% 0 5% 0); }
+  80% { clip-path: inset(10% 0 70% 0); }
+  100% { clip-path: inset(30% 0 20% 0); }
+}
+
+@keyframes glitch-anim-2 {
+  0% { clip-path: inset(10% 0 60% 0); }
+  20% { clip-path: inset(30% 0 20% 0); }
+  40% { clip-path: inset(70% 0 10% 0); }
+  60% { clip-path: inset(20% 0 50% 0); }
+  80% { clip-path: inset(50% 0 30% 0); }
+  100% { clip-path: inset(5% 0 80% 0); }
+}
+
+/* Smooth theme transition */
+html.theme-transitioning *,
+html.theme-astro *, 
+html.theme-game *, 
+html.theme-cyberpunk * {
+  transition: background-color 0.4s ease, border-color 0.4s ease, color 0.3s ease;
+}

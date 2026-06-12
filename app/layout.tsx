@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import React from "react";
 import { Providers } from "./providers";
 import FloatingDock from "@/components/FloatingDock";
+import SerenovaWidget from "@/components/serenova";
 
 export const metadata: Metadata = {
   title: "I'M — Lifkie",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Providers>
           <FloatingDock />
           {children}
+          <SerenovaWidget />
         </Providers>
       </body>
     </html>
