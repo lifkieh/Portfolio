@@ -82,5 +82,173 @@
       "ambientA": "#660000",
       "ambientB": "#990033"
     }
+  },
+  {
+    "id": "eihp9x",
+    "prompt": "cyberpunk theme",
+    "slug": "cyberpunk",
+    "mood": "Dark and Neon",
+    "filename": "1781279325103_cyberpunk_eihp9x.css",
+    "generatedAt": "2026-06-12T15:48:45.103Z",
+    "colors": {
+      "bgPrimary": "#212121",
+      "bgSecondary": "#333333",
+      "bgTertiary": "#444444",
+      "textPrimary": "#66CCFF",
+      "textSecondary": "#999999",
+      "accent": "#FF69B4",
+      "accentSoft": "#FF99CC",
+      "glassBg": "rgba(0, 0, 0, 0.5)",
+      "glassBorder": "rgba(255, 255, 255, 0.1)",
+      "ambientA": "#3399FF",
+      "ambientB": "#6666FF"
+    }
+  },
+  {
+    "id": "cxhieq",
+    "prompt": "cyberpunk theme with effects",
+    "slug": "cyberpunk-neon",
+    "mood": "High-tech dystopia",
+    "filename": "1781279347178_cyberpunk-neon_cxhieq.css",
+    "generatedAt": "2026-06-12T15:49:07.178Z",
+    "colors": {
+      "bgPrimary": "#2b2b2b",
+      "bgSecondary": "#333333",
+      "bgTertiary": "#444444",
+      "textPrimary": "#66ccff",
+      "textSecondary": "#999999",
+      "accent": "#ff69b4",
+      "accentSoft": "#ff99cc",
+      "glassBg": "rgba(0, 0, 0, 0.5)",
+      "glassBorder": "rgba(255, 255, 255, 0.1)",
+      "ambientA": "#2288ff",
+      "ambientB": "#8800ff"
+    }
+  },
+  {
+    "id": "06998g",
+    "prompt": "volcano theme",
+    "slug": "volcano-blaze",
+    "mood": "Intense and fiery",
+    "filename": "1781279388608_volcano-blaze_06998g.css",
+    "generatedAt": "2026-06-12T15:49:48.608Z",
+    "colors": {
+      "bgPrimary": "#3B0B0B",
+      "bgSecondary": "#7A2828",
+      "bgTertiary": "#FF9900",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#AAAAAA",
+      "accent": "#FF3737",
+      "accentSoft": "#FF6666",
+      "glassBg": "rgba(255, 255, 255, 0.1)",
+      "glassBorder": "rgba(255, 255, 255, 0.2)",
+      "ambientA": "#660000",
+      "ambientB": "#330000"
+    }
+  },
+  {
+    "id": "i9dtbx",
+    "prompt": "tsunami dan air",
+    "slug": "tsunami-oceanic",
+    "mood": "Calming yet powerful",
+    "filename": "1781279410306_tsunami-oceanic_i9dtbx.css",
+    "generatedAt": "2026-06-12T15:50:10.306Z",
+    "colors": {
+      "bgPrimary": "#032B44",
+      "bgSecondary": "#1A4665",
+      "bgTertiary": "#456778",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#B1B1B1",
+      "accent": "#03A9F4",
+      "accentSoft": "#87CEEB",
+      "glassBg": "rgba(12, 53, 89, 0.2)",
+      "glassBorder": "rgba(22, 77, 131, 0.5)",
+      "ambientA": "#004C8F",
+      "ambientB": "#66CCCC"
+    }
+  },
+  {
+    "id": "hcejoc",
+    "prompt": "astro theme",
+    "slug": "astro",
+    "mood": "Cosmic",
+    "filename": "1781279470315_astro_hcejoc.css",
+    "generatedAt": "2026-06-12T15:51:10.315Z",
+    "colors": {
+      "bgPrimary": "#1a1d23",
+      "bgSecondary": "#2f343a",
+      "bgTertiary": "#3b4047",
+      "textPrimary": "#ffffff",
+      "textSecondary": "#b9b9b9",
+      "accent": "#03a9f4",
+      "accentSoft": "#67b2e8",
+      "glassBg": "rgba(25, 25, 30, 0.5)",
+      "glassBorder": "rgba(50, 50, 55, 0.2)",
+      "ambientA": "#4400ff",
+      "ambientB": "#8800ff"
+    }
+  },
+  {
+    "id": "spdawc",
+    "prompt": "astro theme with stars",
+    "slug": "galactic-night",
+    "mood": "Cosmic and Dreamy",
+    "filename": "1781279480757_galactic-night_spdawc.css",
+    "generatedAt": "2026-06-12T15:51:20.757Z",
+    "colors": {
+      "bgPrimary": "#212121",
+      "bgSecondary": "#333333",
+      "bgTertiary": "#444444",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#AAAAAA",
+      "accent": "#03A9F4",
+      "accentSoft": "#0068B7",
+      "glassBg": "rgba(255, 255, 255, 0.1)",
+      "glassBorder": "rgba(255, 255, 255, 0.2)",
+      "ambientA": "#666666",
+      "ambientB": "#999999"
+    }
+  },
+  {
+    "id": "oh32ra",
+    "prompt": "astro theme",
+    "slug": "astro",
+    "mood": "Cosmic and mysterious",
+    "filename": "1781279714908_astro_oh32ra.css",
+    "generatedAt": "2026-06-12T15:55:14.908Z",
+    "colors": {
+      "bgPrimary": "#212121",
+      "bgSecondary": "#333333",
+      "bgTertiary": "#454545",
+      "textPrimary": "#FFFFFF",
+      "textSecondary": "#AAAAAA",
+      "accent": "#03A9F4",
+      "accentSoft": "#66D9EF",
+      "glassBg": "rgba(255, 255, 255, 0.1)",
+      "glassBorder": "rgba(255, 255, 255, 0.2)",
+      "ambientA": "#8B0A1A",
+      "ambientB": "#1A1D23"
+    }
+  },
+  {
+    "id": "ahqrop",
+    "prompt": "cyberpunk game theme",
+    "slug": "cyberpunk-game",
+    "mood": "Dark and Neon",
+    "filename": "1781280104294_cyberpunk-game_ahqrop.css",
+    "generatedAt": "2026-06-12T16:01:44.294Z",
+    "colors": {
+      "bgPrimary": "#2b2b2b",
+      "bgSecondary": "#333333",
+      "bgTertiary": "#444444",
+      "textPrimary": "#66ccff",
+      "textSecondary": "#999999",
+      "accent": "#ff69b4",
+      "accentSoft": "#ff99cc",
+      "glassBg": "rgba(0, 0, 0, 0.5)",
+      "glassBorder": "rgba(255, 255, 255, 0.1)",
+      "ambientA": "#2266cc",
+      "ambientB": "#8844cc"
+    }
   }
 ]

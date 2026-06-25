@@ -30,7 +30,7 @@ export default function About({ about, skillsTools }: AboutProps) {
               className="w-28 h-28 rounded-full object-cover border border-white/20"
             />
             <div className="flex flex-col items-start gap-2">
-              <div className="text-sm text-slate-600"></div>
+              <div className="text-sm theme-text-muted"></div>
               
               {/* TOMBOL DOWNLOAD RESUME */}
               <a
@@ -58,8 +58,8 @@ export default function About({ about, skillsTools }: AboutProps) {
 
           {/* 2. ABOUT ME  */}
           <div>
-            <h2 className="text-3xl font-bold mb-2">About me</h2>
-            <p className="text-slate-600 text-lg leading-relaxed">
+            <h2 className="text-3xl font-bold mb-2 theme-text">About me</h2>
+            <p className="theme-text-muted text-lg leading-relaxed">
               {about.bio}
             </p>
           </div>

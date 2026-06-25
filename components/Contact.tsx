@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <section id="contact" className="section-pad">
       <div className="max-w-4xl mx-auto px-6">
-        <h3 className="text-2xl font-semibold mb-4 text-slate-800 dark:text-white">Contact Me</h3>
+        <h3 className="text-2xl font-semibold mb-4 theme-text">Contact Me</h3>
         <div className="glass card-soft p-6">
           
           {/* Tambahkan method="post" agar semantik form benar */}
@@ -63,7 +63,7 @@ export default function Contact() {
               type="text"
               required
               placeholder="Your name"
-              className="p-3 rounded-md border border-slate-300 dark:border-white/20 bg-white/50 dark:bg-black/20 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-500"
+              className="p-3 rounded-md border border-slate-300 dark:border-white/20 bg-white/50 dark:bg-black/20 theme-text focus:outline-none focus:ring-2 focus:ring-slate-500"
             />
 
             <input
@@ -71,14 +71,14 @@ export default function Contact() {
               type="email"
               required
               placeholder="you@email.com"
-              className="p-3 rounded-md border border-slate-300 dark:border-white/20 bg-white/50 dark:bg-black/20 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-500"
+              className="p-3 rounded-md border border-slate-300 dark:border-white/20 bg-white/50 dark:bg-black/20 theme-text focus:outline-none focus:ring-2 focus:ring-slate-500"
             />
 
             <textarea
               name="message"
               required
               placeholder="Your message..."
-              className="p-3 rounded-md h-32 border border-slate-300 dark:border-white/20 bg-white/50 dark:bg-black/20 text-slate-800 dark:text-white focus:outline-none focus:ring-2 focus:ring-slate-500"
+              className="p-3 rounded-md h-32 border border-slate-300 dark:border-white/20 bg-white/50 dark:bg-black/20 theme-text focus:outline-none focus:ring-2 focus:ring-slate-500"
             />
 
             <div className="flex items-center justify-between mt-2">
@@ -90,7 +90,7 @@ export default function Contact() {
                 {isSubmitting ? 'Sending...' : 'Send Message'}
               </button>
               
-              <div className="text-sm font-medium text-slate-600 dark:text-slate-300">
+              <div className="text-sm font-medium theme-text-muted">
                 {status}
               </div>
             </div>

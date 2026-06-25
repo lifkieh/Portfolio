@@ -35,12 +35,19 @@ export default function SerenovaWidget() {
       // Add transition class briefly untuk smooth switch
       html.classList.add("theme-transitioning");
 
-      // Remove semua theme classes
+      // Remove semua theme classes dan next-themes dark/light
       Object.values(THEME_REGISTRY).forEach(t => {
         if (t.cssClass) html.classList.remove(t.cssClass);
       });
 
-      if (isPresetTheme(themeName)) {
+      // Hapus sisa-sisa class
+      html.classList.remove('dark', 'light', 'theme-undersea', 'theme-ghibli', 'theme-cyberpunk', 'theme-game', 'theme-astro', 'theme-minimal', 'theme-dufan');
+
+      if (themeName === 'light') {
+        html.classList.add('light');
+      } else if (themeName === 'dark' || themeName === 'default') {
+        html.classList.add('dark');
+      } else if (isPresetTheme(themeName)) {
         const config = THEME_REGISTRY[themeName];
         if (config.available && config.cssClass) {
           html.classList.add(config.cssClass);
@@ -93,6 +100,7 @@ export default function SerenovaWidget() {
         Object.values(THEME_REGISTRY).forEach(t => {
           if (t.cssClass) document.documentElement.classList.remove(t.cssClass);
         });
+        document.documentElement.classList.remove('dark', 'light');
 
         setTimeout(() => document.documentElement.classList.remove("theme-transitioning"), 500);
 

@@ -34,13 +34,13 @@ export default function Projects({ projects }: ProjectsProps) {
     <section id="projects" className="section-pad">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex items-center justify-between mb-6">
-          <h3 className="text-2xl font-semibold text-center text-slate-900 dark:text-white">
+          <h3 className="text-2xl font-semibold text-center theme-text">
             Featured Projects
           </h3>
           {/* Filter badge — show when active */}
           {activeFilter && (
             <div className="flex items-center gap-2">
-              <span className="text-sm text-slate-500 dark:text-slate-400">
+              <span className="text-sm theme-text-muted">
                 filtering by
               </span>
               <span className="
@@ -63,7 +63,7 @@ export default function Projects({ projects }: ProjectsProps) {
 
         {/* Empty state when filter returns nothing */}
         {filtered.length === 0 ? (
-          <div className="text-center py-16 text-slate-400 dark:text-slate-500">
+          <div className="text-center py-16 theme-text-muted">
             <p className="text-lg">no projects found for "{activeFilter}"</p>
             <button
               onClick={() => setActiveFilter(null)}

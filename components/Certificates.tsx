@@ -13,7 +13,7 @@ export default function Certificates({ certificates }: CertificatesProps) {
   return (
     <section id="certificates" className="section-pad">
       <div className="max-w-6xl mx-auto px-6">
-        <h3 className="text-2xl font-semibold mb-6 text-center text-slate-900 dark:text-white">
+        <h3 className="text-2xl font-semibold mb-6 text-center theme-text">
           Certificates
         </h3>
         <div className="grid md:grid-cols-3 gap-6">

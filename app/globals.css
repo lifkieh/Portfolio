@@ -26,24 +26,21 @@ html {
 
 /* Default Light Mode */
 body {
-  background: linear-gradient(
-    to bottom right,
-    #faf7fb,
-    #f3eef7,
-    #f8f9ff
-  );
+  background: linear-gradient(to bottom right,
+      #faf7fb,
+      #f3eef7,
+      #f8f9ff);
   color: #1e293b;
-  transition: background 0.4s ease, color 0.3s ease; /* Transisi halus saat switch theme */
+  transition: background 0.4s ease, color 0.3s ease;
+  /* Transisi halus saat switch theme */
 }
 
 /* Dark Mode (Akan otomatis aktif karena defaultTheme="dark" di Providers) */
 .dark body {
-  background: linear-gradient(
-    to bottom right,
-    #0e0a12,
-    #1a0f1f,
-    #120b18
-  );
+  background: linear-gradient(to bottom right,
+      #0e0a12,
+      #1a0f1f,
+      #120b18);
   color: #f1eaf5;
 }
 
@@ -58,8 +55,8 @@ body {
 
 .dark .bg-ambient {
   background:
-    radial-gradient(circle at top left, rgba(255,140,200,0.18) 0%, transparent 60%),
-    radial-gradient(circle at bottom right, rgba(180,140,255,0.14) 0%, transparent 60%);
+    radial-gradient(circle at top left, rgba(255, 140, 200, 0.18) 0%, transparent 60%),
+    radial-gradient(circle at bottom right, rgba(180, 140, 255, 0.14) 0%, transparent 60%);
 }
 
 /* ------------------------------------------------------
@@ -80,7 +77,7 @@ body {
 
 .glass-hover:hover {
   transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 10px 35px rgba(0,0,0,0.25);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.25);
 }
 
 /* ------------------------------------------------------
@@ -108,13 +105,13 @@ section {
 ------------------------------------------------------- */
 input,
 textarea {
-  background: rgba(255,255,255,0.6);
+  background: rgba(255, 255, 255, 0.6);
   color: #1e293b;
 }
 
 .dark input,
 .dark textarea {
-  background: rgba(50,50,50,0.6);
+  background: rgba(50, 50, 50, 0.6);
   color: #e2e8f0;
 }
 
@@ -132,44 +129,65 @@ textarea::placeholder {
    PRESET THEMES (SERENOVA INTENT)
 ------------------------------------------------------- */
 
+:root {
+  --color-text: #1e293b;
+  --color-text-muted: #64748b;
+}
+
+.dark {
+  --color-text: #f1eaf5;
+  --color-text-muted: #9ca3af;
+}
+
 /* THEME: MINIMAL */
 html.theme-minimal body {
   background: #fafafa;
-  color: #111;
+  --color-text: #111;
+  color: var(--color-text);
 }
+
 html.theme-minimal.dark body {
   background: #0a0a0a;
-  color: #f0f0f0;
+  --color-text: #f0f0f0;
+  color: var(--color-text);
 }
+
 html.theme-minimal .bg-ambient,
 html.theme-minimal.dark .bg-ambient {
   background: none;
 }
+
 html.theme-minimal .glass {
-  background: rgba(255,255,255,0.8);
-  border: 1px solid rgba(0,0,0,0.1);
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   backdrop-filter: none;
 }
+
 html.theme-minimal.dark .glass {
-  background: rgba(20,20,20,0.8);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(20, 20, 20, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: none;
 }
 
 /* THEME: ASTRO */
 html.theme-astro body {
   background: linear-gradient(to bottom right, #e8f4ff, #dbeafe);
-  color: #0c4a6e;
+  --color-text: #0c4a6e;
+  color: var(--color-text);
 }
+
 html.theme-astro.dark body {
   background: linear-gradient(to bottom right, #030712, #0a1628, #0d1b3e);
-  color: #e0f2fe;
+  --color-text: #e0f2fe;
+  color: var(--color-text);
 }
+
 html.theme-astro.dark .bg-ambient {
-  background: 
-    radial-gradient(circle at top left, rgba(56,189,248,0.15) 0%, transparent 60%),
-    radial-gradient(circle at bottom right, rgba(59,130,246,0.15) 0%, transparent 60%);
+  background:
+    radial-gradient(circle at top left, rgba(56, 189, 248, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.15) 0%, transparent 60%);
 }
+
 html.theme-astro.dark .glass {
   background: rgba(14, 30, 70, 0.6);
   border-color: rgba(100, 180, 255, 0.2);
@@ -178,17 +196,22 @@ html.theme-astro.dark .glass {
 /* THEME: GAME */
 html.theme-game body {
   background: linear-gradient(to bottom right, #f0fdf4, #ecfdf5);
-  color: #14532d;
+  --color-text: #14532d;
+  color: var(--color-text);
 }
+
 html.theme-game.dark body {
   background: linear-gradient(to bottom right, #020c02, #0a1a0a, #061206);
-  color: #86efac;
+  --color-text: #86efac;
+  color: var(--color-text);
 }
+
 html.theme-game.dark .bg-ambient {
-  background: 
-    radial-gradient(circle at top right, rgba(74,222,128,0.1) 0%, transparent 60%),
-    radial-gradient(circle at bottom left, rgba(34,197,94,0.15) 0%, transparent 60%);
+  background:
+    radial-gradient(circle at top right, rgba(74, 222, 128, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at bottom left, rgba(34, 197, 94, 0.15) 0%, transparent 60%);
 }
+
 html.theme-game.dark .glass {
   background: rgba(0, 30, 0, 0.7);
   border-color: rgba(74, 222, 128, 0.25);
@@ -197,71 +220,184 @@ html.theme-game.dark .glass {
 /* THEME: CYBERPUNK */
 html.theme-cyberpunk body {
   background: linear-gradient(to bottom right, #fff9f0, #fff3e0);
-  color: #4a044e;
+  --color-text: #4a044e;
+  color: var(--color-text);
 }
+
 html.theme-cyberpunk.dark body {
   background: linear-gradient(to bottom right, #0a0005, #150010, #0d000a);
-  color: #f9a8d4;
+  --color-text: #f9a8d4;
+  color: var(--color-text);
 }
+
 html.theme-cyberpunk.dark .bg-ambient {
-  background: 
-    radial-gradient(circle at top center, rgba(236,72,153,0.15) 0%, transparent 60%),
-    radial-gradient(circle at bottom left, rgba(219,39,119,0.15) 0%, transparent 60%);
+  background:
+    radial-gradient(circle at top center, rgba(236, 72, 153, 0.15) 0%, transparent 60%),
+    radial-gradient(circle at bottom left, rgba(219, 39, 119, 0.15) 0%, transparent 60%);
 }
+
 html.theme-cyberpunk.dark .glass {
   background: rgba(40, 0, 30, 0.7);
   border-color: rgba(244, 114, 182, 0.3);
+}
+
+/* ------------------------------------------------------
+   THEME: UNDERSEA  (FIX: background utk light & dark)
+------------------------------------------------------- */
+html.theme-undersea body {
+  background: linear-gradient(to bottom right, #2b6cb0, #1a4f8a, #0c3a66);
+  --color-text: #e0f2fe;
+  color: var(--color-text);
+}
+
+html.theme-undersea.dark body {
+  background: linear-gradient(to bottom right, #001a2e, #00263f, #001523);
+  --color-text: #bae6fd;
+  color: var(--color-text);
+}
+
+html.theme-undersea .bg-ambient,
+html.theme-undersea.dark .bg-ambient {
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.18) 0%, transparent 50%),
+    radial-gradient(circle at bottom, rgba(2, 132, 199, 0.25) 0%, transparent 60%);
+}
+
+html.theme-undersea.dark .glass,
+html.theme-undersea .glass {
+  background: rgba(0, 40, 70, 0.6);
+  border-color: rgba(56, 189, 248, 0.25);
+}
+
+html.theme-undersea section {
+  background: rgba(0, 20, 40, 0.55);
+  backdrop-filter: blur(12px);
+  margin-top: 1px;
+}
+
+/* ------------------------------------------------------
+   THEME: GHIBLI  (FIX: background utk light & dark)
+------------------------------------------------------- */
+html.theme-ghibli body {
+  background: linear-gradient(to bottom, #cfeedd 0%, #a8d8c0 55%, #7fbf9a 100%);
+  --color-text: #1a4f3b;
+  color: var(--color-text);
+}
+
+html.theme-ghibli.dark body {
+  background: linear-gradient(to bottom, #0c1f17, #122e22, #0a1813);
+  --color-text: #e2e8f0;
+  color: var(--color-text);
+}
+
+html.theme-ghibli .bg-ambient {
+  background:
+    radial-gradient(circle at top, rgba(135, 206, 235, 0.30) 0%, transparent 55%),
+    radial-gradient(circle at bottom, rgba(127, 191, 154, 0.35) 0%, transparent 60%);
+}
+
+html.theme-ghibli.dark .bg-ambient {
+  background:
+    radial-gradient(circle at top, rgba(135, 206, 235, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at bottom, rgba(74, 222, 128, 0.10) 0%, transparent 60%);
+}
+
+html.theme-ghibli.dark .glass,
+html.theme-ghibli .glass {
+  background: rgba(20, 40, 20, 0.6);
+  border-color: rgba(135, 206, 235, 0.3);
+}
+
+/* ------------------------------------------------------
+   THEME: DUFAN  (OPSI B: konten disembunyikan via opacity,
+   DufanScene canvas overlay yang mengambil alih layar)
+------------------------------------------------------- */
+html.theme-dufan body {
+  /* fallback background di belakang canvas (kalau scene belum mount) */
+  background: radial-gradient(circle at 50% 0%, #3b1d6e 0%, #1a1040 55%, #0d0826 100%);
+  --color-text: #e0f2fe;
+  color: var(--color-text);
+  /* overflow:hidden dipertahankan supaya halaman tak bisa di-scroll saat main game */
+  overflow: hidden;
+}
+
+/* FIX PENTING: JANGAN display:none (itu yang bikin blank kalau scene gagal).
+   Sembunyikan secara visual saja — layout tetap ada, scene overlay menutupi. */
+html.theme-dufan main,
+html.theme-dufan footer {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* header tetap terlihat agar user bisa keluar dari mode lewat tombol theme.
+   Kalau mau header juga ikut tersembunyi, un-comment baris di bawah:
+html.theme-dufan header { opacity: 0; pointer-events: none; }
+*/
+
+/* Utility classes for theme text */
+.theme-text {
+  color: var(--color-text);
+}
+
+.theme-text-muted {
+  color: var(--color-text-muted);
 }
 
 /* ===== THEME ANIMATION HELPERS ===== */
 
 /* Cyberpunk scanlines */
 html.theme-cyberpunk .scanlines-overlay {
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.1) 2px,
-    rgba(0, 0, 0, 0.1) 4px
-  );
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 0, 0, 0.1) 2px,
+      rgba(0, 0, 0, 0.1) 4px);
   opacity: 0.06;
   animation: cyber-scan 8s linear infinite;
 }
 
 @keyframes cyber-scan {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100vh); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
 }
 
 /* Cyberpunk city glow */
 html.theme-cyberpunk .city-glow {
-  background: radial-gradient(ellipse at bottom, rgba(236,72,153,0.6) 0%, transparent 70%);
+  background: radial-gradient(ellipse at bottom, rgba(236, 72, 153, 0.6) 0%, transparent 70%);
   opacity: 0.12;
 }
 
 /* Game scanlines */
 html.theme-game .scanlines-overlay {
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 1px,
-    rgba(0, 0, 0, 0.1) 1px,
-    rgba(0, 0, 0, 0.1) 2px
-  );
+  background: repeating-linear-gradient(0deg,
+      transparent,
+      transparent 1px,
+      rgba(0, 0, 0, 0.1) 1px,
+      rgba(0, 0, 0, 0.1) 2px);
   opacity: 0.03;
   animation: game-scan 8s linear infinite;
 }
 
 @keyframes game-scan {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(100vh); }
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(100vh);
+  }
 }
 
 /* Game pixel grid overlay */
 html.theme-game .pixel-grid {
-  background-image: 
-    linear-gradient(rgba(0,0,0,0.2) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,0,0,0.2) 1px, transparent 1px);
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.2) 1px, transparent 1px);
   background-size: 32px 32px;
   opacity: 0.04;
 }
@@ -270,6 +406,7 @@ html.theme-game .pixel-grid {
 html.theme-cyberpunk .glitch-text {
   position: relative;
 }
+
 html.theme-cyberpunk .glitch-text::before,
 html.theme-cyberpunk .glitch-text::after {
   content: attr(data-text);
@@ -280,12 +417,14 @@ html.theme-cyberpunk .glitch-text::after {
   height: 100%;
   opacity: 0.8;
 }
+
 html.theme-cyberpunk .glitch-text::before {
   left: 2px;
   text-shadow: -2px 0 red;
   clip-path: inset(10% 0 30% 0);
   animation: glitch-anim-1 2s infinite linear alternate-reverse;
 }
+
 html.theme-cyberpunk .glitch-text::after {
   left: -2px;
   text-shadow: -2px 0 blue;
@@ -294,27 +433,139 @@ html.theme-cyberpunk .glitch-text::after {
 }
 
 @keyframes glitch-anim-1 {
-  0% { clip-path: inset(20% 0 80% 0); }
-  20% { clip-path: inset(60% 0 10% 0); }
-  40% { clip-path: inset(40% 0 50% 0); }
-  60% { clip-path: inset(80% 0 5% 0); }
-  80% { clip-path: inset(10% 0 70% 0); }
-  100% { clip-path: inset(30% 0 20% 0); }
+  0% {
+    clip-path: inset(20% 0 80% 0);
+  }
+
+  20% {
+    clip-path: inset(60% 0 10% 0);
+  }
+
+  40% {
+    clip-path: inset(40% 0 50% 0);
+  }
+
+  60% {
+    clip-path: inset(80% 0 5% 0);
+  }
+
+  80% {
+    clip-path: inset(10% 0 70% 0);
+  }
+
+  100% {
+    clip-path: inset(30% 0 20% 0);
+  }
 }
 
 @keyframes glitch-anim-2 {
-  0% { clip-path: inset(10% 0 60% 0); }
-  20% { clip-path: inset(30% 0 20% 0); }
-  40% { clip-path: inset(70% 0 10% 0); }
-  60% { clip-path: inset(20% 0 50% 0); }
-  80% { clip-path: inset(50% 0 30% 0); }
-  100% { clip-path: inset(5% 0 80% 0); }
+  0% {
+    clip-path: inset(10% 0 60% 0);
+  }
+
+  20% {
+    clip-path: inset(30% 0 20% 0);
+  }
+
+  40% {
+    clip-path: inset(70% 0 10% 0);
+  }
+
+  60% {
+    clip-path: inset(20% 0 50% 0);
+  }
+
+  80% {
+    clip-path: inset(50% 0 30% 0);
+  }
+
+  100% {
+    clip-path: inset(5% 0 80% 0);
+  }
+}
+
+/* Undersea water reflection overlay */
+html.theme-undersea .water-overlay {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+  animation: pulse-water 8s infinite alternate ease-in-out;
+}
+
+@keyframes pulse-water {
+  0% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
 }
 
 /* Smooth theme transition */
 html.theme-transitioning *,
-html.theme-astro *, 
-html.theme-game *, 
-html.theme-cyberpunk * {
+html.theme-astro *,
+html.theme-game *,
+html.theme-cyberpunk *,
+html.theme-undersea * {
   transition: background-color 0.4s ease, border-color 0.4s ease, color 0.3s ease;
+}
+
+/* ======================================================
+   PLAY / FOCUS MODE — sembunyikan konten biar fokus main
+   Aktif saat <html> punya class .play-focus
+====================================================== */
+html.play-focus main,
+html.play-focus footer {
+  display: none !important;
+}
+
+/* Sembunyikan kursor sistem di mode ghibli/undersea supaya crosshair
+   yang digambar di canvas jadi penunjuk utama */
+html.theme-ghibli,
+html.theme-undersea {
+  cursor: none;
+}
+
+/* tapi elemen interaktif tetap punya kursor normal */
+html.theme-ghibli a,
+html.theme-ghibli button,
+html.theme-ghibli input,
+html.theme-ghibli textarea,
+html.theme-ghibli select,
+html.theme-undersea a,
+html.theme-undersea button,
+html.theme-undersea input,
+html.theme-undersea textarea,
+html.theme-undersea select {
+  cursor: pointer;
+}
+
+/* Tombol floating Play/Focus */
+.play-focus-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #fff;
+  background: rgba(15, 30, 25, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(10px) saturate(140%);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.play-focus-toggle:hover {
+  background: rgba(15, 30, 25, 0.85);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.4);
 }

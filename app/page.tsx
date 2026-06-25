@@ -9,3 +9,5 @@ export default async function Page() {
 
   return <HomeClient projects={projects} about={about} skillsTools={skillsTools} certificates={certificates} />
 }
+
+

@@ -127,10 +127,10 @@ export function useSerenova(onAction?: (action: SerenovaResponse & { type: "acti
                 ),
               }));
             }
-            
+
             if (parsed.action) {
               const action = parsed.action as SerenovaResponse & { type: "action" };
-              
+
               if (action.confirmationMessage) {
                 setState((prev) => ({
                   ...prev,
@@ -141,7 +141,7 @@ export function useSerenova(onAction?: (action: SerenovaResponse & { type: "acti
                   ),
                 }));
               }
-              
+
               onAction?.(action);
             }
 
