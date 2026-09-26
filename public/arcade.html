@@ -593,13 +593,13 @@ body{line-height:1.55;}
   
   <section class="s12 tty off" id="shell">
     <div class="termbar"><span class="win-ico" aria-hidden="true">▣</span><span class="t">C:\lifkie\arcade — cmd.exe · node</span><span class="rt" id="ttystate">CLICK TO FOCUS</span><span class="winctl" aria-hidden="true"><b>_</b><b>▢</b><b>✕</b></span></div>
-    <div class="ttyscreen" id="screen"><div class="ttyline cw">Microsoft Windows [Version 10.0.26100.2894]</div><div class="ttyline cgr">(c) Lifkie Lie. All rights reserved, most rights unused.</div><div class="ttyline">&nbsp;</div><div class="ttyline ps"><span class="cgr">C:\lifkie\arcade&gt;</span><span class="cw">node -v</span></div><div class="ttyline cw">v22.11.0</div><div class="ttyline">&nbsp;</div><div class="ttyline ps"><span class="cgr">C:\lifkie\arcade&gt;</span><span class="cw">whoami</span></div><div class="ttyline cw">lifkie\lifkie</div><div class="ttyline cgr">computer science student  full-stack web &amp; data  cs '27</div><div class="ttyline">&nbsp;</div><div class="ttyline ps"><span class="cgr">C:\lifkie\arcade&gt;</span><span class="cw">dir /b</span></div><div class="ttyline cc">about.js  stack.js  projects.js  certs.js  contact.js  resume.js  neofetch.js</div><div class="ttyline"><span class="cy">bughunt.js  snake.js  runner.js  guess.js  quiz.js  ttt.js  hangman.js  rps.js</span></div><div class="ttyline"><span class="cm">ship.js  matrix.js  bugwalk.js</span><span class="cgr">   trophies.js  skin.js  gamemode.js</span></div><div class="ttyline">&nbsp;</div><div class="ttyline cg">21 scripts. no buttons. everything happens in here.</div><div class="ttyline cgr">type  help  for the full list, or hit ctrl+k anywhere on the page.</div><div class="ttyline">&nbsp;</div></div>
+    <div class="ttyscreen" id="screen"><div class="ttyline cw">Microsoft Windows [Version 10.0.26100.2894]</div><div class="ttyline cgr">(c) Lifkie Lie. All rights reserved, most rights unused.</div><div class="ttyline">&nbsp;</div><div class="ttyline ps"><span class="cgr">C:\lifkie\arcade&gt;</span><span class="cw">node -v</span></div><div class="ttyline cw">v22.11.0</div><div class="ttyline">&nbsp;</div><div class="ttyline ps"><span class="cgr">C:\lifkie\arcade&gt;</span><span class="cw">whoami</span></div><div class="ttyline cw">lifkie\lifkie</div><div class="ttyline cgr">computer science student  full-stack web &amp; data  cs '27</div><div class="ttyline">&nbsp;</div><div class="ttyline ps"><span class="cgr">C:\lifkie\arcade&gt;</span><span class="cw">dir /b</span></div><div class="ttyline cc">about.js  stack.js  projects.js  certs.js  contact.js  resume.js  neofetch.js</div><div class="ttyline"><span class="cy">bughunt.js  snake.js  runner.js  guess.js  quiz.js  ttt.js  hangman.js  rps.js</span></div><div class="ttyline"><span class="cy">2048.js  minesweeper.js  wordle.js  cave.js  typing.js</span></div><div class="ttyline"><span class="cm">ship.js  matrix.js  bugwalk.js</span><span class="cgr">   trophies.js</span></div><div class="ttyline">&nbsp;</div><div class="ttyline cg">24 scripts. no buttons. everything happens in here.</div><div class="ttyline cgr">type  help  for the full list, or hit ctrl+k anywhere on the page.</div><div class="ttyline">&nbsp;</div></div>
     <div class="prompt" id="promptline"><span class="ps1" id="ps1">C:\lifkie\arcade&gt;</span><span class="cli" id="cli"></span><span class="cur"></span></div>
     <div class="ttychips" aria-label="quick commands">
       <button type="button" onclick="window.__CON&amp;&amp;window.__CON.run('help')">help</button>
       <button type="button" onclick="window.__CON&amp;&amp;window.__CON.run('dir')">dir</button>
     </div>
-    <div class="ttyfoot"><span>run <b>dir</b> to list scripts · <b>node &lt;file&gt;</b> to launch</span><span>8 games · 4 anims · <b>ctrl+c</b> aborts</span><span>try <b>help</b> · <b>node neofetch.js</b></span></div>
+    <div class="ttyfoot"><span>run <b>dir</b> to list scripts · <b>node &lt;file&gt;</b> to launch</span><span><b id="ttygc">14</b> games · 4 anims · <b>ctrl+c</b> aborts</span><span>try <b>help</b> · <b>node neofetch.js</b></span></div>
   </section>
 
   <style id="gb-css">
@@ -901,9 +901,7 @@ window.__FILES=[
  ['ship.js',2640,'ANIM  fake deploy pipeline'],
  ['matrix.js',1760,'ANIM  it rains characters'],
  ['bugwalk.js',1340,'ANIM  a bug crosses the screen'],
- ['trophies.js',1450,'what you have unlocked'],
- ['skin.js',700,'skin.js ink|moss|bone'],
- ['gamemode.js',880,'gamemode.js on|off']
+ ['trophies.js',1450,'what you have unlocked']
 ];
 
 A['ls']='dir';A['clear']='cls';A['cat']='type';A['man']='help';A['h']='help';A['quit']='exit';
@@ -967,7 +965,13 @@ K['dir']=function(){
       +'<span class="cgr">  </span><span class="'+(isGame?'cy':(isAnim?'cm':'cc'))+'">'+pad(F[i][0],16)+'</span>'
       +'<span class="cgr">'+C.esc(F[i][2])+'</span>');
   }
-  out('              '+F.length+' File(s)  '+tot.toLocaleString()+' bytes','cw');
+  var ARC=[['2048.js',2048,'GAME  slide & merge tiles up to 2048'],['minesweeper.js',3600,'GAME  minesweeper 9x9, 10 mines'],['wordle.js',2600,'GAME  guess the 5-letter word'],['cave.js',3400,'GAME  text adventure in a dark cave'],['typing.js',2900,'GAME  typing speed test (wpm)']];
+  for(var ai=0;ai<ARC.length;ai++){ tot+=ARC[ai][1];
+    outH('<span class="cgr">09/12/2026  09:41 AM    </span><span class="cw">'+lpad(ARC[ai][1].toLocaleString(),9)+'</span>'
+      +'<span class="cgr">  </span><span class="cy">'+pad(ARC[ai][0],16)+'</span>'
+      +'<span class="cgr">'+C.esc(ARC[ai][2])+'</span>');
+  }
+  out('              '+(F.length+ARC.length)+' File(s)  '+tot.toLocaleString()+' bytes','cw');
   out('               2 Dir(s)   too much free space','cgr');blank();
   out('run any of them with  node <file>  (or just the name).','cg');
   C.award('dir');
@@ -1015,11 +1019,13 @@ K['help']=function(){
   out('    node certs.js       node contact.js     node resume.js      node neofetch.js','cc');blank();
   out('  GAMES (all stdin/stdout)','cy');
   out('    node bughunt.js     node snake.js       node runner.js      node guess.js','cc');
-  out('    node quiz.js        node ttt.js         node hangman.js     node rps.js','cc');blank();
+  out('    node quiz.js        node ttt.js         node hangman.js     node rps.js','cc');
+  out('    node 2048.js        node minesweeper.js node wordle.js      node cave.js','cc');
+  out('    node typing.js','cc');blank();
   out('  ANIMATIONS','cy');
   out('    node ship.js        node matrix.js      node bugwalk.js     npm install','cc');blank();
   out('  META','cy');
-  out('    node trophies.js    node skin.js ink|moss|bone    node gamemode.js on|off','cc');blank();
+  out('    node trophies.js','cc');blank();
   out('  keys: tab complete · up/down history · ctrl+c abort · ctrl+k palette','cgr');
 };
 })();
@@ -1179,15 +1185,7 @@ K['trophies']=function(){
   out('best runs: bughunt '+(b.bughunt||0)+' · snake '+(b.snake||0)+' · runner '+(b.runner||0)+' · quiz '+(b.quiz||0)+'/5','cgr');
 };
 
-K['skin']=function(a){
-  var v=(a[0]||'').toLowerCase();
-  if(['ink','moss','bone'].indexOf(v)<0){out('usage: node skin.js ink|moss|bone','cr');out('current: '+document.documentElement.dataset.skin,'cgr');return}
-  window.__setSkin(v);out('skin -> '+v,'cg');
-};
-K['gamemode']=function(a){
-  var v=(a[0]||'').toLowerCase();
-  out('game mode was removed. games live at /games now.','cgr');
-};
+
 })();
 </script>
 
@@ -1834,9 +1832,10 @@ async function boot(){
   await typeLine('dir /b');
   out('about.js  stack.js  projects.js  certs.js  contact.js  resume.js  neofetch.js','cc');
   outH('<span class="cy">bughunt.js  snake.js  runner.js  guess.js  quiz.js  ttt.js  hangman.js  rps.js</span>');
-  outH('<span class="cm">ship.js  matrix.js  bugwalk.js</span><span class="cgr">   trophies.js  skin.js  gamemode.js</span>');
+  outH('<span class="cy">2048.js  minesweeper.js  wordle.js  cave.js  typing.js</span>');
+  outH('<span class="cm">ship.js  matrix.js  bugwalk.js</span><span class="cgr">   trophies.js</span>');
   blank();
-  out('21 scripts. no buttons. everything happens in here.','cg');
+  out('24 scripts. no buttons. everything happens in here.','cg');
   out('type  help  for the full list, or hit ctrl+k anywhere on the page.','cgr');
   C.award('boot');
   C.ready();
@@ -2156,7 +2155,7 @@ var REPLIES=[
  [/(contact|hire|email|reach|kontak|hubungi)/i,"jump to /contact, or run 'contact' in the terminal. email is the fastest route."],
  [/(game|snake|arcade|play|main)/i,"open /games in the navbar, or run 'snake.js' in the terminal. the pets in the footer are not part of the game, they just live there."],
  [/(pet|fox|cat|kucing|rubah|animal|hewan)/i,"those are real sprite sheets by elthen. fox and cat, walking the footer border. click one and see what happens."],
- [/(skin|theme|tema|color|warna)/i,"three skins: ink, moss, bone. switch with node skin.js in the terminal \u2014 every color here comes from css variables."],
+ [/(skin|theme|tema|color|warna)/i,"the theme is soft lavender on charcoal \u2014 every color here comes from css variables."],
  [/(help|bantuan|command|perintah|\?)/i,"try: stack / work / contact / how was this built / who is lifkie. or press CTRL+K for the command palette."],
  [/(thank|makasih|thanks|nice|keren|bagus)/i,"noted. i'll pretend that improved my weights."]
 ];
@@ -3524,6 +3523,7 @@ window.__ARC={run(name){if(game)stopGame();out.innerHTML='';echoH(promptHTML()+e
       setTimeout(function(){openArcade(k);},70); return '';
     };
   });
+  (function(){var e=document.getElementById('ttygc');if(e){var gc=(window.__FILES||[]).filter(function(f){return String(f[2]).indexOf('GAME')===0}).length+5;e.textContent=String(gc);}})();
   window.addEventListener('hashchange',route);
   document.addEventListener('click',function(e){
     var a=e.target.closest('a[href="#top"]'); if(!a)return;
