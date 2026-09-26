@@ -2295,6 +2295,30 @@ SP.octopus={f:"sprites/octopus-sprite-sheet.png",c:7,r:7,face:"right",climb:0.7,
 SP.slime={f:"sprites/slime-sprite-sheet.png",c:8,r:5,face:"right",climb:0.2,foot:2.1,
  a:{idle:{row:0,n:4,fps:5},walk:{row:1,n:8,fps:10},react:{row:3,n:4,fps:9},quirk:{row:2,n:7,fps:10}},
  say:["*squelch*","slime.js: memory leak","blob storage","splitting into 2 workers"]};
+SP.slime_blue={f:"sprites/slime-blue-nudelchef.png",c:3,r:4,w:48,h:64,face:"right",climb:0.2,foot:3,
+ a:{idle:{row:0,n:3,fps:5},walk:{row:1,n:3,fps:8},react:{row:2,n:3,fps:9},quirk:{row:3,n:3,fps:7}},
+ say:["*blorp*","slime.js: blue build","gelatinous","cd ~/ooze"]};
+SP.slime_green={f:"sprites/slime-green-nudelchef.png",c:3,r:4,w:48,h:64,face:"right",climb:0.2,foot:3,
+ a:{idle:{row:0,n:3,fps:5},walk:{row:1,n:3,fps:8},react:{row:2,n:3,fps:9},quirk:{row:3,n:3,fps:7}},
+ say:["*blorp*","slime.js: green build","photosynthesizing","chmod +x goo"]};
+SP.slime_red={f:"sprites/slime-red-nudelchef.png",c:3,r:4,w:48,h:64,face:"right",climb:0.2,foot:3,
+ a:{idle:{row:0,n:3,fps:5},walk:{row:1,n:3,fps:8},react:{row:2,n:3,fps:9},quirk:{row:3,n:3,fps:7}},
+ say:["*blorp*","slime.js: red build","spicy jelly","kill -9 lumps"]};
+SP.slime_yellow={f:"sprites/slime-yellow-nudelchef.png",c:3,r:4,w:48,h:64,face:"right",climb:0.2,foot:3,
+ a:{idle:{row:0,n:3,fps:5},walk:{row:1,n:3,fps:8},react:{row:2,n:3,fps:9},quirk:{row:3,n:3,fps:7}},
+ say:["*blorp*","slime.js: yellow build","citrus ooze","npm run wobble"]};
+SP.slime_violet={f:"sprites/slime-violet-nudelchef.png",c:3,r:4,w:48,h:64,face:"right",climb:0.2,foot:3,
+ a:{idle:{row:0,n:3,fps:5},walk:{row:1,n:3,fps:8},react:{row:2,n:3,fps:9},quirk:{row:3,n:3,fps:7}},
+ say:["*blorp*","slime.js: violet build","royal goo","sudo squish"]};
+SP.slime_lightblue={f:"sprites/slime-lightblue-nudelchef.png",c:3,r:4,w:48,h:64,face:"right",climb:0.2,foot:3,
+ a:{idle:{row:0,n:3,fps:5},walk:{row:1,n:3,fps:8},react:{row:2,n:3,fps:9},quirk:{row:3,n:3,fps:7}},
+ say:["*blorp*","slime.js: aqua build","cool jelly","ping the puddle"]};
+SP.slime_green2={f:"sprites/slime-green-calciumtrice.png",c:10,r:5,w:32,h:32,face:"right",climb:0.2,foot:2,
+ a:{idle:{row:0,n:10,fps:6},walk:{row:2,n:10,fps:10},react:{row:3,n:10,fps:10},quirk:{row:1,n:10,fps:6}},
+ say:["*wobble*","slime.js: gooey worker","32-bit ooze","calcium build"]};
+SP.slime_blue2={f:"sprites/slime-blue-calciumtrice.png",c:10,r:5,w:32,h:32,face:"right",climb:0.2,foot:2,
+ a:{idle:{row:0,n:10,fps:6},walk:{row:2,n:10,fps:10},react:{row:3,n:10,fps:10},quirk:{row:1,n:10,fps:6}},
+ say:["*wobble*","slime.js: blue worker","liquid state","calcium build"]};
 SP.fireel={f:"sprites/fire-elemental-sprite-sheet.png",c:8,r:5,face:"right",climb:0.5,foot:5.5,
  a:{idle:{row:1,n:6,fps:8},look:{row:3,n:6,fps:7},walk:{row:0,n:8,fps:10},react:{row:2,n:8,fps:12}},
  say:["*crackle*","fire.js: prod is fine","this is fine","stack trace, literally"]};
@@ -2455,7 +2479,8 @@ var hud =document.createElement("div"); hud.id="pets-hud";
 hud.innerHTML='<span id="pets-stat"></span>'+
  '<span class="cr">sprites: <a href="https://elthen.itch.io" target="_blank" rel="noopener">elthen</a>'+
  ' &middot; <a href="https://lizcheong.itch.io" target="_blank" rel="noopener">liz cheong</a>'+
- ' &middot; <a href="https://blacky91.itch.io" target="_blank" rel="noopener">blacky91</a></span>';
+ ' &middot; <a href="https://blacky91.itch.io" target="_blank" rel="noopener">blacky91</a>'+
+ ' &middot; slimes <a href="https://opengameart.org/content/slimes-0" target="_blank" rel="noopener">nudelchef</a> (CC0) &amp; <a href="https://opengameart.org/content/animated-slime" target="_blank" rel="noopener">Calciumtrice</a> (<a href="https://creativecommons.org/licenses/by/3.0/" target="_blank" rel="noopener">CC-BY 3.0</a>)</span>';
 document.body.appendChild(rail); document.body.appendChild(lane); (document.querySelector(".foot")||document.body).appendChild(hud);
 var stat=hud.querySelector("#pets-stat");
 
@@ -2707,7 +2732,7 @@ function buildPick(){
   c.appendChild(wv); c.appendChild(nm); grid.appendChild(c);
  }
  var ft=document.createElement("div"); ft.className="ppfoot";
- ft.innerHTML="sprites: <b>elthen</b> &middot; <b>liz cheong</b> &middot; <b>Blacky91</b> &middot; <b>OpenGameArt</b> (Spring Spring, AntumDeluge, Calciumtrice, dogchicken, Oiboo, felinoid, ChickenTeddy) &middot; your pick is remembered in this browser";
+ ft.innerHTML="sprites: <b>elthen</b> &middot; <b>liz cheong</b> &middot; <b>Blacky91</b> &middot; <b>OpenGameArt</b> (Spring Spring, AntumDeluge, dogchicken, Oiboo, felinoid, ChickenTeddy) &middot; slimes by <b>nudelchef</b> (<a href='https://creativecommons.org/publicdomain/zero/1.0/' target='_blank' rel='noopener'>CC0</a>) &amp; <b>Calciumtrice</b> (<a href='https://creativecommons.org/licenses/by/3.0/' target='_blank' rel='noopener'>CC-BY 3.0</a>) &middot; your pick is remembered in this browser";
  box.appendChild(head); box.appendChild(bar); box.appendChild(grid); box.appendChild(ft);
  pick.appendChild(box); document.body.appendChild(pick);
  pick.addEventListener("click", function(ev){
@@ -2778,7 +2803,9 @@ var SPAWN=[
   ["swampling",0.6000,0.85],  ["twig",0.6200,0.95],  ["leshy",0.6400,0.9],  ["golem",0.6600,0.7],  ["mimic",0.6800,0.75],
   ["akaname",0.7000,1.05],  ["devourer",0.7200,1],  ["brainmole",0.7400,1.1],  ["shardsoul",0.7600,1.15],  ["otter",0.7800,1.1],
   ["frog",0.8000,0.7],  ["bunny",0.8200,1.35],  ["penguin",0.8400,0.8],  ["pug",0.8600,0.95],  ["wolfcub",0.8800,0.4],
-  ["deer",0.9000,1.15],  ["rat",0.9200,1.3],  ["cutemon",0.9400,0.9],  ["turtle",0.9600,0.35],  ["snail",0.9800,0.25]
+  ["deer",0.9000,1.15],  ["rat",0.9200,1.3],  ["cutemon",0.9400,0.9],  ["turtle",0.9600,0.35],  ["snail",0.9800,0.25],
+  ["slime_blue",0,0.8],  ["slime_green",0,0.8],  ["slime_red",0,0.8],  ["slime_yellow",0,0.8],  ["slime_violet",0,0.8],  ["slime_lightblue",0,0.8],
+  ["slime_green2",0,1.15],  ["slime_blue2",0,1.15]
 ];
  for(var qi=0;qi<SPAWN.length;qi++){SPAWN[qi][1]=((qi*7)%SPAWN.length)/SPAWN.length;}
 var cwv=document.documentElement.clientWidth;
