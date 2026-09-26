@@ -83,7 +83,7 @@ a{color:inherit;text-decoration:none}
 .barin{display:flex;align-items:center;gap:10px;height:58px}
 .logo{font-family:var(--pixel);font-size:15px;font-weight:700;letter-spacing:0;margin-right:auto}
 .logo:before{content:"$ ";color:var(--dim);font-weight:400}
-.logo b{color:var(--a1)}
+
 .menu{display:flex;gap:18px;font-family:var(--mono);font-size:12px;color:var(--dim);margin-right:12px}
 .menu a:before{content:"/";color:var(--line2);margin-right:3px}
 .menu a:hover,.menu a.on{color:var(--a1)}
@@ -463,7 +463,7 @@ body{line-height:1.55;}
 <a class="skip" href="#about">skip to content</a>
 
 <div class="bar"><div class="wrap barin">
-  <div class="logo">lifkie<b>.dev</b></div>
+  <div class="logo">lifkie</div>
   <nav class="menu"><a href="#about" class="on">about</a><a href="#work">work</a><a href="#contact">contact</a><a href="#games">games</a><a href="#guestbook">guestbook</a></nav>
   <button class="tbtn" id="palhint">CTRL+K</button>
 </div></div>
@@ -3483,7 +3483,7 @@ window.__ARC={run(name){if(game)stopGame();out.innerHTML='';echoH(promptHTML()+e
       var name=f[0].replace(/\.js$/,''), desc=String(f[2]).replace(/^GAME\s*/,'');
       return '<button type="button" class="gm-card" data-run="node '+f[0]+'"><span class="gm-n">'+name+'</span><span class="gm-d">'+desc+'</span><span class="gm-r">node '+f[0]+'</span></button>';
     }).join('')+ARC.map(function(a){
-      return '<button type="button" class="gm-card" data-arc="'+a[0]+'"><span class="gm-n">'+a[0]+'</span><span class="gm-d">'+a[1]+'</span><span class="gm-r">'+a[0]+'</span></button>';
+      return '<button type="button" class="gm-card" data-arc="'+a[0]+'"><span class="gm-n">'+a[0]+'</span><span class="gm-d">'+a[1]+'</span><span class="gm-r">node '+a[0]+'.js</span></button>';
     }).join('');
     g.addEventListener('click',function(e){
       var b=e.target.closest('.gm-card'); if(!b)return;
@@ -3517,6 +3517,13 @@ window.__ARC={run(name){if(game)stopGame();out.innerHTML='';echoH(promptHTML()+e
     if(window.__SPY)window.__SPY();
     requestAnimationFrame(function(){if(window.__petsMeasure)window.__petsMeasure()});
   }
+  window.__openArcade=openArcade;
+  ['2048','minesweeper','wordle','cave','typing'].forEach(function(k){
+    if(window.__CMD) window.__CMD[k]=function(){
+      if((location.hash||'').indexOf('games')<0){location.hash='#games';}
+      setTimeout(function(){openArcade(k);},70); return '';
+    };
+  });
   window.addEventListener('hashchange',route);
   document.addEventListener('click',function(e){
     var a=e.target.closest('a[href="#top"]'); if(!a)return;
