@@ -27,7 +27,7 @@ export default function HomeClient({ projects, about, skillsTools, certificates 
       <ThemeCanvas />
       {<GhibliScene />}
       {<UnderseaScene />}
-      {<DufanScene />}
+      {<DufanScene />}``
 
       {/* Cyberpunk city glow — CSS only overlay */}
       <div className="city-glow fixed bottom-0 left-0 right-0 h-[30vh] pointer-events-none z-0" />

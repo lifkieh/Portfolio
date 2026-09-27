@@ -1,0 +1,18 @@
+
+> my-portfolio@0.1.0 dev
+> next dev
+
+▲ Next.js 16.1.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.4:3000
+- Environments: .env.local
+
+✓ Starting...
+✓ Ready in 770ms
+ GET /api/guestbook 200 in 3.1s (compile: 2.1s, render: 1021ms)
+ POST /api/guestbook 200 in 431ms (compile: 16ms, render: 416ms)
+ GET /api/guestbook 200 in 234ms (compile: 26ms, render: 208ms)
+ POST /api/guestbook 200 in 190ms (compile: 13ms, render: 177ms)
+ GET /api/guestbook 200 in 727ms (compile: 31ms, render: 695ms)
+ GET /api/guestbook 200 in 581ms (compile: 5ms, render: 576ms)
+^C^C
